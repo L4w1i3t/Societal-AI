@@ -1,0 +1,62 @@
+@use '../variables' as *;
+
+.hero {
+  background-color: $background-color;
+  padding: 6rem 0;
+  min-height: calc(100vh - 73px); // Adjust based on your header height
+  display: flex;
+  align-items: center;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      text-align: center;
+      gap: 3rem;
+    }
+  }
+  
+  .hero-content {
+    flex: 1;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: $light-text;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      
+      @media (max-width: $breakpoint-sm) {
+        font-size: 2.25rem;
+      }
+    }
+    
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+      max-width: 600px;
+      
+      @media (max-width: $breakpoint-md) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    
+    .featured-logo {
+      max-width: 100%;
+      height: auto;
+      max-height: 350px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    }
+  }
+}

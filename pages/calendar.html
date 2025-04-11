@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - ATIH-UVA</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+</head>
+<body>
+    <!-- Header will be dynamically inserted here -->
+    <div id="header-container"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Events Calendar</h1>
+                <p>Find our upcoming events, meetings, and activities</p>
+            </div>
+        </section>
+
+        <section class="calendar-section">
+            <div class="container">
+                <div class="calendar-container">
+                    <div id="calendar"></div>
+                </div>
+
+                <div class="upcoming-events">
+                    <h2>Upcoming Events</h2>
+                    <div id="event-list">
+                        <!-- Event list will be populated by JavaScript -->
+                        <div class="event-placeholder">Loading events...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="event-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-date"></p>
+                <p id="modal-time"></p>
+                <p id="modal-location"></p>
+                <div id="modal-description"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be dynamically inserted here -->
+    <div id="footer-container"></div>
+
+    <!-- FullCalendar and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="../components/addComponents.js"></script>
+    <script src="../components/calendar.js"></script>
+</body>
+</html>

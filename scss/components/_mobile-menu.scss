@@ -1,0 +1,60 @@
+@use '../variables' as *;
+
+.mobile-nav {
+  position: fixed;
+  top: 73px; // Adjust based on your header height
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: calc(100vh - 73px);
+  background: $secondary-color;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: right $transition-speed ease;
+  overflow-y: auto;
+  z-index: 99;
+  
+  &.open {
+    right: 0;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    
+    li {
+      margin: 0.75rem 0;
+    }
+    
+    a {
+      display: block;
+      padding: 0.5rem 0;
+      color: $text-color;
+      
+      &:hover, &.active {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+// Active state for the mobile menu toggle
+.mobile-menu-toggle.active {
+  span {
+    &:first-child {
+      transform: translateY(9px) rotate(45deg);
+    }
+    
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    
+    &:last-child {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+}
