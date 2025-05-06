@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to load HTML component
     async function loadComponent(url, targetId) {
         try {
-            const response = await fetch(url);
+            // Add version parameter to component URL for cache busting
+            const versionedUrl = window.assetVersioning ? 
+                window.assetVersioning.addVersionParameter(url) : url;
+                
+            const response = await fetch(versionedUrl);
             if (!response.ok) {
                 throw new Error(`Failed to fetch ${url}: ${response.status}`);
             }
@@ -23,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 html = html.replace(/href="pages\//g, 'href="../pages/');
                 html = html.replace(/src="assets\//g, 'src="../assets/');
                 html = html.replace(/href="index.html"/g, 'href="../index.html"');
+            }
+            
+            // Apply versioning to assets in the HTML
+            if (window.assetVersioning) {
+                html = window.assetVersioning.versionDynamicComponents(html, basePath);
             }
             
             // Insert the component into the page
@@ -87,8 +96,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
+            // Toggle mobile overlay
+            const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+            if (mobileOverlay) {
+                mobileOverlay.classList.toggle('active');
+                
+                // Add click handler to close menu when overlay is clicked
+                mobileOverlay.addEventListener('click', function() {
+                    document.body.classList.remove('mobile-menu-open');
+                    mobileNav.classList.remove('open');
+                    mobileOverlay.classList.remove('active');
+                    document.querySelector('.mobile-menu-toggle').classList.remove('active');
+                });
+            }
+            
             mobileNav.classList.toggle('open');
             event.target.closest('.mobile-menu-toggle').classList.toggle('active');
         }
     });
+
+    // Add animated glow effects to the page
+    addDecorativeElements();
 });
+
+// Function to add decorative elements like animated glow effects
+function addDecorativeElements() {
+    // Add scroll animations for elements
+    const scrollElements = document.querySelectorAll('.staff-card, .event-card, .btn');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    scrollElements.forEach(element => {
+        observer.observe(element);
+    });
+}

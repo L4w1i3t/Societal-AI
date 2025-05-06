@@ -1,16 +1,124 @@
-<!--Webmaster's school email, organization listserv, anonymous feedback options, etc-->
-
-<!--For right now it should just say something along the lines of "currently under development, check back later". I don't care if it's low effort-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact Us - ATIH-UVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Load versioning system first -->
+    <script src="../js/version.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <h1>Currently Under Development</h1>
-    <p>Check back later for updates.</p>
+    <!-- Header will be dynamically inserted here -->
+    <div id="header-container"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Reach out to our team with questions, suggestions, or feedback</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="leadership-contacts">
+                        <h2>Leadership Team</h2>
+                        
+                        <div class="contact-card">
+                            <div class="contact-photo">
+                                <img src="../assets/team/fan.webp" alt="Xuxin Fan">
+                            </div>
+                            <div class="contact-info">
+                                <h3>Xuxin Fan</h3>
+                                <h4>President</h4>
+                                <div class="contact-method">
+                                    <span class="contact-icon">📧</span>
+                                    <a href="mailto:xxxxxx@virginia.edu">xxxxxx@virginia.edu</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-photo">
+                                <img src="../assets/team/owen.webp" alt="Owen Watzlavick">
+                            </div>
+                            <div class="contact-info">
+                                <h3>Owen Watzlavick</h3>
+                                <h4>Vice President</h4>
+                                <div class="contact-method">
+                                    <span class="contact-icon">📧</span>
+                                    <a href="mailto:xxxxxx@virginia.edu">xxxxxx@virginia.edu</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-photo">
+                                <img src="../assets/team/charles.webp" alt="Charles Melvin">
+                            </div>
+                            <div class="contact-info">
+                                <h3>Charles Melvin</h3>
+                                <h4>Web Admin</h4>
+                                <div class="contact-method">
+                                    <span class="contact-icon">📧</span>
+                                    <a href="mailto:jgm6jy@virginia.edu">jgm6jy@virginia.edu</a>
+                                </div>
+                                <div class="contact-method">
+                                    <span class="contact-icon">
+                                        <img src="../assets/gui/discord-icon.svg" alt="Discord" class="discord-mini-icon">
+                                    </span>
+                                    <span>@L4w1i3t</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="general-contact">
+                        <h2>General Inquiries</h2>
+                        <div class="general-card">
+                            <div class="general-icon">
+                                <img src="../assets/gui/email-icon.svg" alt="Email" class="email-icon">
+                            </div>
+                            <div class="general-info">
+                                <h3>Email Us</h3>
+                                <p>For general questions and information:</p>
+                                <a href="mailto:atihuva@virginia.edu" class="highlight-email">atihuva@virginia.edu</a>
+                            </div>
+                        </div>
+
+                        <div class="general-card">
+                            <div class="general-icon">
+                                <img src="../assets/gui/discord-icon.svg" alt="Discord" class="discord-icon">
+                            </div>
+                            <div class="general-info">
+                                <h3>Join Our Discord</h3>
+                                <p>For community discussions and quick responses:</p>
+                                <a href="#" class="btn btn-primary">Join Discord Server</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h2>Anonymous Feedback</h2>
+                        <p>We value your thoughts and suggestions. Feel free to provide anonymous feedback through our form:</p>
+                        <a href="#" class="btn btn-outline">Submit Anonymous Feedback</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Footer will be dynamically inserted here -->
+    <div id="footer-container"></div>
+
+    <script src="../components/addComponents.js"></script>
 </body>
 </html>

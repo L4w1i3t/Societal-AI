@@ -1,16 +1,93 @@
-<!--Links to the groupme and listserv-->
-
-<!--For right now it should just say something along the lines of "currently under development, check back later". I don't care if it's low effort-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Join Us - ATIH-UVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Load versioning system first -->
+    <script src="../js/version.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <h1>Currently Under Development</h1>
-    <p>Check back later for updates.</p>
+    <!-- Header will be dynamically inserted here -->
+    <div id="header-container"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Join Our Community</h1>
+                <p>Connect with us and become part of our growing community</p>
+            </div>
+        </section>
+
+        <section class="join-section">
+            <div class="container">
+                <div class="join-content">
+                    <div class="join-methods">
+                        <div class="join-card">
+                            <div class="join-icon">
+                                <img src="../assets/gui/discord-icon.svg" alt="Discord Icon" class="discord-icon">
+                            </div>
+                            <div class="join-info">
+                                <h2>Discord Server</h2>
+                                <p>Join our Discord server to chat with members, participate in discussions, and stay updated on events and announcements.</p>
+                                <a href="#" class="btn btn-primary">Join Our Discord</a>
+                            </div>
+                        </div>
+
+                        <div class="join-card">
+                            <div class="join-icon">
+                                <img src="../assets/gui/groupme-qr.webp" alt="GroupMe QR Code" class="qr-code">
+                            </div>
+                            <div class="join-info">
+                                <h2>GroupMe</h2>
+                                <p>Scan this QR code to join our GroupMe chat for quick updates and communications.</p>
+                                <p class="note">You can also download the GroupMe app on your smartphone to stay connected on the go.</p>
+                            </div>
+                        </div>
+
+                        <div class="join-card">
+                            <div class="join-icon">
+                                <img src="../assets/gui/email-icon.svg" alt="Email Icon" class="email-icon">
+                            </div>
+                            <div class="join-info">
+                                <h2>Join Our Listserv</h2>
+                                <p>Subscribe to our email listserv to receive important announcements, event notifications, and news directly to your inbox.</p>
+                                <form class="listserv-form">
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Your UVA email address" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-accent">Subscribe</button>
+                                </form>
+                                <p class="note">We respect your privacy and will only send relevant content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="join-benefits">
+                        <h2>Benefits of Joining</h2>
+                        <ul class="benefits-list">
+                            <li><span class="benefit-icon">✓</span> Connect with like-minded individuals passionate about ethical AI</li>
+                            <li><span class="benefit-icon">✓</span> Access to exclusive events and workshops</li>
+                            <li><span class="benefit-icon">✓</span> Opportunities to collaborate on projects</li>
+                            <li><span class="benefit-icon">✓</span> Stay informed about the latest in AI ethics and technology</li>
+                            <li><span class="benefit-icon">✓</span> Build professional connections with industry experts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Footer will be dynamically inserted here -->
+    <div id="footer-container"></div>
+
+    <script src="../components/addComponents.js"></script>
 </body>
 </html>

@@ -14,6 +14,20 @@ body {
   line-height: $line-height-base;
   color: $text-color;
   background-color: $background-color;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23333644' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $gradient-overlay;
+    pointer-events: none;
+    z-index: -1;
+  }
 }
 
 .container {
@@ -28,6 +42,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   color: $light-text;
+  font-family: $font-family-heading;
+}
+
+h1 {
+  letter-spacing: -0.02em;
+}
+
+h2, h3 {
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -48,4 +71,38 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+// Add glow effects for text highlights
+.text-glow {
+  text-shadow: 0 0 10px rgba($primary-color, 0.5);
+}
+
+.accent-text-1 {
+  color: $accent-color-1;
+}
+
+.accent-text-2 {
+  color: $accent-color-2;
+}
+
+// Add a blurred circular element for decorative purposes
+.glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.2;
+  z-index: -1;
+  
+  &.primary {
+    background-color: $primary-color;
+  }
+  
+  &.accent-1 {
+    background-color: $accent-color-1;
+  }
+  
+  &.accent-2 {
+    background-color: $accent-color-2;
+  }
 }

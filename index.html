@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | ATIH-UVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Load versioning system first -->
+    <script src="js/version.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -12,12 +17,19 @@
 
     <main>
         <section class="hero">
+            <!-- Decorative glow circles -->
+            <div class="glow-circle circle-1 primary"></div>
+            <div class="glow-circle circle-2 accent-1"></div>
+            
             <div class="container">
                 <div class="hero-content">
-                    <h1>Welcome to All Tech is Human at UVA!</h1>
+                    <h1>Welcome to <span class="highlight">All Tech is Human</span> at UVA!</h1>
                     <p>Building a diverse, vibrant, and supportive community that deeply cares about the responsible use of AI technology.</p>
                     <p>We're bringing together humanities and technology to raise awareness about AI's significant impact on our lives and develop viable solutions for building awesome AI communities on grounds and beyond.</p>
-                    <a href="pages/about.html" class="btn btn-primary">Learn More</a>
+                    <div class="btn-group">
+                        <a href="pages/about.html" class="btn btn-primary btn-lg">Learn More</a>
+                        <a href="pages/join.html" class="btn btn-outline">Join Us</a>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="assets/gui/logoplaceholder.webp" alt="ATIH-UVA Logo" class="featured-logo">
@@ -25,6 +37,9 @@
             </div>
         </section>
     </main>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
 
     <!-- Footer will be dynamically inserted here -->
     <div id="footer-container"></div>

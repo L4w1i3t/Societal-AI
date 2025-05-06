@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Add loading class to calendar container immediately
+    const calendarContainer = document.querySelector('.calendar-container');
+    if (calendarContainer) {
+        calendarContainer.classList.add('loading');
+    }
+    
+    // Add skeleton loading state to event list
+    const eventListContainer = document.getElementById('event-list');
+    if (eventListContainer) {
+        // Replace loading placeholder with skeleton loaders
+        eventListContainer.innerHTML = `
+            <div class="event-skeleton"></div>
+            <div class="event-skeleton"></div>
+            <div class="event-skeleton"></div>
+        `;
+    }
+
     // Determine the correct path to events.json based on current location
     const currentPath = window.location.pathname;
     const isInSubfolder = currentPath.includes('/pages/');
@@ -8,20 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with empty events array
     let events = [];
     
+    // Check if we're on a mobile device to set appropriate default view
+    const isMobile = window.innerWidth < 768;
+    
     // Fetch events from JSON file
     // Right now just has sample data, but will be replaced with real data later
-    // The format for the data is as follows:
-    // {
-    //     "events": [
-    //         {
-    //             "id": "1",
-    //             "title": "Sample Event",
-    //             "start": "2023-10-01T10:00:00",
-    //             "end": "2023-10-01T12:00:00",
-    //             "location": "Sample Location",
-    //             "description": "Sample description for the event."
-    //         },
-    //         . . .
     fetch(eventsJsonPath)
         .then(response => {
             if (!response.ok) {
@@ -38,6 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Populate the upcoming events list
             populateUpcomingEvents(events);
+            
+            // Remove loading class from calendar container
+            if (calendarContainer) {
+                calendarContainer.classList.remove('loading');
+            }
         })
         .catch(error => {
             console.error('Error loading events:', error);
@@ -45,13 +58,17 @@ document.addEventListener('DOMContentLoaded', function() {
             initializeCalendar([]);
             
             // Show error in upcoming events section
-            const eventListContainer = document.getElementById('event-list');
             if (eventListContainer) {
                 eventListContainer.innerHTML = `
                     <div class="no-events">
                         Unable to load events. Please try again later.
                     </div>
                 `;
+            }
+            
+            // Remove loading class from calendar container
+            if (calendarContainer) {
+                calendarContainer.classList.remove('loading');
             }
         });
     
@@ -61,11 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!calendarEl) return;
         
         const calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
+            initialView: isMobile ? 'listMonth' : 'dayGridMonth',
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'dayGridMonth,timeGridWeek,listMonth'
+                right: isMobile ? 'dayGridMonth,listMonth' : 'dayGridMonth,timeGridWeek,listMonth'
             },
             events: calendarEvents,
             eventClick: function(info) {
@@ -76,7 +93,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 minute: '2-digit',
                 meridiem: true
             },
-            height: 'auto',
+            height: 'auto', // Allow calendar to expand to fit content
+            contentHeight: 'auto', // Ensure the content is not cropped
+            aspectRatio: 1.35, // Wider aspect ratio to fit more content
+            expandRows: true, // Allow rows to expand to fit all events
+            stickyHeaderDates: true, // Keep header visible when scrolling
+            handleWindowResize: true, // Automatically resize on window changes
             themeSystem: 'standard',
             // Custom styling for the dark theme
             eventDidMount: function(info) {
@@ -101,11 +123,40 @@ document.addEventListener('DOMContentLoaded', function() {
         // Render the calendar
         calendar.render();
         
+        // Set window resize handler to ensure calendar adapts to size changes
+        window.addEventListener('resize', function() {
+            setTimeout(function() {
+                calendar.updateSize();
+            }, 200);
+        });
+        
+        // Set up mobile view switching logic if on mobile
+        if (isMobile) {
+            setupMobileViewToggle(calendar);
+        }
+        
         // Set up modal event handlers
         setupEventModal();
         
         // Store calendar instance in a global variable for access from other functions
         window.calendarInstance = calendar;
+    }
+
+    // Function to handle mobile view toggling more effectively
+    function setupMobileViewToggle(calendar) {
+        // Listen for orientation changes
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                calendar.updateSize();
+            }, 200);
+        });
+        
+        // Improve touch interactions
+        const calendarEl = document.getElementById('calendar');
+        if (calendarEl) {
+            // Add touch-action CSS for better scrolling
+            calendarEl.style.touchAction = 'manipulation';
+        }
     }
 
     // Function to show event details in modal

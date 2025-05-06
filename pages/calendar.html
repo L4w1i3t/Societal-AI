@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - ATIH-UVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js" as="script">
+    <!-- Load versioning system first -->
+    <script src="../js/version.js"></script>
     <link rel="stylesheet" href="../css/main.css">
     <!-- FullCalendar CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <style>
+        /* Inline critical CSS to prevent layout shifts */
+        .calendar-container {
+            min-height: 650px;
+            height: auto;
+            max-width: 100%;
+            position: relative;
+        }
+        #calendar {
+            min-height: 600px;
+            position: relative;
+            height: auto !important;
+        }
+        #event-list {
+            min-height: 300px;
+        }
+        
+        /* Fix for FullCalendar view getting cut off */
+        .fc-view-harness {
+            height: auto !important;
+            min-height: 500px;
+        }
+        .fc-scrollgrid-sync-table {
+            height: auto !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header will be dynamically inserted here -->
@@ -22,15 +56,14 @@
 
         <section class="calendar-section">
             <div class="container">
-                <div class="calendar-container">
+                <div class="calendar-container loading">
                     <div id="calendar"></div>
                 </div>
 
                 <div class="upcoming-events">
                     <h2>Upcoming Events</h2>
                     <div id="event-list">
-                        <!-- Event list will be populated by JavaScript -->
-                        <div class="event-placeholder">Loading events...</div>
+                        <!-- Event skeletons will be added by JS on page load -->
                     </div>
                 </div>
             </div>
@@ -47,6 +80,9 @@
             </div>
         </div>
     </main>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
 
     <!-- Footer will be dynamically inserted here -->
     <div id="footer-container"></div>

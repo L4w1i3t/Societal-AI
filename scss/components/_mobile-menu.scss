@@ -7,11 +7,17 @@
   width: 80%;
   max-width: 300px;
   height: calc(100vh - 73px);
-  background: $secondary-color;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-  transition: right $transition-speed ease;
+  background: linear-gradient(135deg, 
+    rgba($secondary-color, 0.9), 
+    rgba($secondary-color, 0.8)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.4);
+  transition: right $transition-speed-slow ease;
   overflow-y: auto;
   z-index: 99;
+  border-left: 1px solid rgba($border-color, 0.3);
   
   &.open {
     right: 0;
@@ -23,16 +29,64 @@
     padding: 1.5rem;
     
     li {
-      margin: 0.75rem 0;
+      margin: 0.5rem 0;
+      position: relative;
+      overflow: hidden;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, 
+          rgba($border-color, 0), 
+          rgba($border-color, 0.5), 
+          rgba($border-color, 0)
+        );
+        transform: translateX(-100%);
+        transition: transform $transition-speed;
+      }
+      
+      &:hover::after {
+        transform: translateX(0);
+      }
     }
     
     a {
       display: block;
-      padding: 0.5rem 0;
+      padding: 0.75rem 0.5rem;
       color: $text-color;
+      position: relative;
+      transition: all $transition-speed;
+      border-radius: $border-radius;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        background: $primary-color;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all $transition-speed;
+      }
       
       &:hover, &.active {
         color: $primary-color;
+        padding-left: 1rem;
+        background: rgba($secondary-color, 0.5);
+        
+        &::before {
+          left: 0.5rem;
+          width: 6px;
+          height: 6px;
+          opacity: 1;
+        }
       }
     }
   }
@@ -47,14 +101,40 @@ body.mobile-menu-open {
   span {
     &:first-child {
       transform: translateY(9px) rotate(45deg);
+      width: 100%;
+      background: $primary-color;
     }
     
     &:nth-child(2) {
       opacity: 0;
+      transform: translateX(-20px);
     }
     
     &:last-child {
       transform: translateY(-9px) rotate(-45deg);
+      width: 100%;
+      background: $primary-color;
     }
+  }
+}
+
+// Add a smooth overlay for the background when mobile menu is open
+.mobile-menu-overlay {
+  position: fixed;
+  top: 73px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 73px);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 98;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-speed, visibility $transition-speed;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
   }
 }

@@ -1,0 +1,13 @@
+{
+  "events": [
+    {
+      "id": "[unique_number]",
+      "title": "str",
+      "start": "YYYY-MM-DD[T]HH:MM:SS",
+      "end": "YYYY-MM-DD[T]HH:MM:SS",
+      "location": "str",
+      "description": "str",
+      "color": "[6_char_hex]"
+    }
+  ]
+}

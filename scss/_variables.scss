@@ -7,10 +7,16 @@ $light-text: #ffffff;
 $dark-text: #0f111a;
 $border-color: #333644;
 
+// Accent colors
+$accent-color-1: #ff6c9e; // Pink accent
+$accent-color-2: #6cffe9; // Teal accent
+$gradient-overlay: linear-gradient(135deg, rgba($accent-color-1, 0.15), rgba($accent-color-2, 0.15));
+
 // Typography
 $font-family-base: 'Open Sans', Arial, sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.6;
+$font-family-heading: 'Poppins', 'Open Sans', Arial, sans-serif;
 
 // Breakpoints
 $breakpoint-sm: 576px;
@@ -24,5 +30,8 @@ $container-padding: 1rem;
 
 // Other
 $border-radius: 4px;
+$border-radius-lg: 8px;
 $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+$box-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
 $transition-speed: 0.3s;
+$transition-speed-slow: 0.5s;
