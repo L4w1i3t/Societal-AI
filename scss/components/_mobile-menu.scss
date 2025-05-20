@@ -2,7 +2,7 @@
 
 .mobile-nav {
   position: fixed;
-  top: 73px; // Adjust based on your header height
+  top: 73px;
   right: -100%;
   width: 80%;
   max-width: 300px;
@@ -118,7 +118,7 @@ body.mobile-menu-open {
   }
 }
 
-// Add a smooth overlay for the background when mobile menu is open
+// Smooth overlay for the background when mobile menu is open
 .mobile-menu-overlay {
   position: fixed;
   top: 73px;

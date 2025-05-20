@@ -1,7 +1,6 @@
 @use 'sass:color';
 @use 'variables' as *;
 
-// Reset and base styles
 * {
   margin: 0;
   padding: 0;
@@ -73,7 +72,6 @@ img {
   display: block;
 }
 
-// Add glow effects for text highlights
 .text-glow {
   text-shadow: 0 0 10px rgba($primary-color, 0.5);
 }
@@ -86,7 +84,6 @@ img {
   color: $accent-color-2;
 }
 
-// Add a blurred circular element for decorative purposes
 .glow-circle {
   position: absolute;
   border-radius: 50%;

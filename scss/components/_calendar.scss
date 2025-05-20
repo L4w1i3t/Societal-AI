@@ -1,7 +1,6 @@
 @use 'sass:color';
 @use '../variables' as *;
 
-/* Add keyframes for spinner animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -71,7 +70,6 @@
     transition: opacity 0.3s ease-in;
   }
   
-  // Add subtle diagonal accent lines
   &::before, &::after {
     content: '';
     position: absolute;
@@ -175,7 +173,6 @@
     position: relative;
     z-index: 1;
     
-    // Add a subtle glow effect
     &::after {
       content: '';
       position: absolute;
@@ -280,7 +277,6 @@
   }
 }
 
-/* Add loading skeleton for event list */
 .event-skeleton {
   height: 90px;
   margin-bottom: 1.25rem;
@@ -293,8 +289,6 @@
   animation: shimmer 1.5s infinite;
 }
 
-
-// Modal styles
 .modal {
   display: none;
   position: fixed;
@@ -324,8 +318,7 @@
     overflow-y: auto;
     border: 1px solid rgba($border-color, 0.2);
     animation: modalFadeIn 0.3s ease-out;
-    
-    // Add a subtle gradient border
+  
     &::before {
       content: '';
       position: absolute;
@@ -427,7 +420,6 @@
   }
 }
 
-// Enhance calendar styles for FullCalendar
 .fc-theme-standard {
   font-family: $font-family-base;
   
@@ -553,7 +545,7 @@
     }
   }
   
-  // Enhanced mobile modal styles
+  // Mobile modal styles
   .modal {
     .modal-content {
       width: 95%;

@@ -665,16 +665,17 @@ body.mobile-menu-open {
   margin-bottom: 0.3rem;
   color: #ffffff;
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 .staff-card .staff-info h4 {
   color: #6c9eff;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.8rem;
-  padding-right: 1.5rem;
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 .staff-card .staff-info h4::after {
   content: "";
@@ -725,7 +726,6 @@ body.mobile-menu-open {
   padding-left: 10px;
 }
 
-/* Add keyframes for spinner animation */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -971,7 +971,6 @@ body.mobile-menu-open {
   border-radius: 1px;
 }
 
-/* Add loading skeleton for event list */
 .event-skeleton {
   height: 90px;
   margin-bottom: 1.25rem;
