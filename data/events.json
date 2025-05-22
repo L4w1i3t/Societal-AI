@@ -2,11 +2,11 @@
   "events": [
     {
       "id": "1",
-      "title": "DUMMY",
-      "start": "2025-06-15T14:00:00",
-      "end": "2025-06-15T16:00:00",
-      "location": "DUMMY",
-      "description": "DUMMY",
+      "title": "Summer Break",
+      "start": "2025-05-10T08:00:00",
+      "end": "2025-08-18T08:00:00",
+      "location": "Earth",
+      "description": "Have a great summer!",
       "color": "#ffffff"
     }
   ]

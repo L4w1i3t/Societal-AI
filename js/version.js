@@ -1,5 +1,5 @@
 /**
- * Asset versioning system for cache-busting
+ * Asset versioning system for cache busting
  * This ensures that when you update assets, browsers will download the new version
  * instead of using cached versions
  */
@@ -8,7 +8,7 @@
 // You can manually update this version when you deploy new changes
 const VERSION = new Date().getTime();
 
-// Apply version to all assets that need cache-busting
+// Apply version to all assets that need cache busting
 function applyVersionToAssets() {
     // Apply to stylesheets
     document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
