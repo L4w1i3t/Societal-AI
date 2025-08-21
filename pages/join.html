@@ -1,72 +1,127 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us - ATIH-UVA</title>
-    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Us - Societal AI at UVA</title>
+    <!-- Security Headers (Note: X-Frame-Options and frame-ancestors should be set via HTTP headers in production) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- Content Security Policy -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+    />
+
+    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Load versioning system first -->
     <script src="../js/version.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
     <!-- Header will be dynamically inserted here -->
     <div id="header-container"></div>
 
     <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Join Our Community</h1>
-                <p>Connect with us and become part of our growing community</p>
-            </div>
-        </section>
+      <section class="page-header">
+        <div class="container">
+          <h1>Join Our Community</h1>
+          <p>Connect with us and become part of our growing community</p>
+        </div>
+      </section>
 
-        <section class="join-section">
-            <div class="container">
-                <div class="join-content">
-                    <div class="join-methods">
-                        <div class="join-card">
-                            <div class="join-icon">
-                                <img src="../assets/gui/discord-icon.svg" alt="Discord Icon" class="discord-icon">
-                            </div>
-                            <div class="join-info">
-                                <h2>Discord Server</h2>
-                                <p>Join our Discord server to chat with members, participate in discussions, and stay updated on events and announcements.</p>
-                                <a href="#" class="btn btn-primary">Join Our Discord</a>
-                            </div>
-                        </div>
-
-                        <div class="join-card">
-                            <div class="join-icon">
-                                <img src="../assets/gui/groupme-qr.webp" alt="GroupMe QR Code" class="qr-code">
-                            </div>
-                            <div class="join-info">
-                                <h2>GroupMe</h2>
-                                <p>Scan this QR code to join our GroupMe chat for quick updates and communications.</p>
-                                <p class="note">You can also download the GroupMe app on your smartphone to stay connected on the go.</p>
-                            </div>
-                        </div>
-
-                        <div class="join-card">
-                            <div class="join-icon">
-                                <img src="../assets/gui/email-icon.svg" alt="Email Icon" class="email-icon">
-                            </div>
-                            <div class="join-info">
-                                <h2>Join Our Listserv</h2>
-                                <p>Subscribe to our email listserv to receive important announcements, event notifications, and news directly to your inbox.</p>
-                                <form class="listserv-form">
-                                    <a href="https://lists.virginia.edu/sympa/subscribe/atih_at_uva?previous_action=info" target="_blank" class="btn btn-accent">Subscribe</a>
-                                </form>
-                                <p class="note">We respect your privacy and will only send relevant content.</p>
-                            </div>
-                        </div>
-                    </div>
+      <section class="join-section">
+        <div class="container">
+          <div class="join-content">
+            <div class="join-methods">
+              <div class="join-card">
+                <div class="join-icon">
+                  <img
+                    src="../assets/gui/discord-icon.svg"
+                    alt="Discord Icon"
+                    class="discord-icon"
+                  />
                 </div>
+                <div class="join-info">
+                  <h2>Discord Server</h2>
+                  <p>
+                    Join our Discord server to chat with members, participate in
+                    discussions, and stay updated on events and announcements.
+                  </p>
+                  <a href="#" class="btn btn-primary"
+                    >Join Our Discord (NOT AVAILABLE YET)</a
+                  >
+                </div>
+              </div>
+
+              <div class="join-card">
+                <div class="join-icon">
+                  <img
+                    src="../assets/gui/groupme-qr.webp"
+                    alt="GroupMe QR Code"
+                    class="qr-code"
+                  />
+                </div>
+                <div class="join-info">
+                  <h2>GroupMe</h2>
+                  <p>
+                    Scan this QR code to join our GroupMe chat for quick updates
+                    and communications.
+                  </p>
+                  <p class="note">
+                    You can also download the GroupMe app on your smartphone to
+                    stay connected on the go.
+                  </p>
+                </div>
+              </div>
+
+              <div class="join-card">
+                <div class="join-icon">
+                  <img
+                    src="../assets/gui/email-icon.svg"
+                    alt="Email Icon"
+                    class="email-icon"
+                  />
+                </div>
+                <div class="join-info">
+                  <h2>Join Our Listserv</h2>
+                  <p>
+                    Subscribe to our email listserv to receive important
+                    announcements, event notifications, and news directly to
+                    your inbox.
+                  </p>
+                  <form class="listserv-form">
+                    <a
+                      href="https://lists.virginia.edu/sympa/subscribe/atih_at_uva?previous_action=info"
+                      target="_blank"
+                      class="btn btn-accent"
+                      >Subscribe</a
+                    >
+                  </form>
+                  <p class="note">
+                    We respect your privacy and will only send relevant content.
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Mobile menu overlay -->
@@ -76,5 +131,5 @@
     <div id="footer-container"></div>
 
     <script src="../components/addComponents.js"></script>
-</body>
+  </body>
 </html>

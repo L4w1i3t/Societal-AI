@@ -1,32 +1,68 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
+// Contact section with optimized background
 .contact-section {
-  padding: 3rem 0 5rem;
+  padding: $space-4xl 0;
+  background: linear-gradient(
+    180deg,
+    $background-color 0%,
+    $surface-color 100%
+  );
+  position: relative;
+
+  // Optimized background pattern - reduced complexity for better performance
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+      circle at 25% 25%,
+      rgba($primary-color, 0.01) 1px,
+      transparent 1px
+    );
+    background-size: 120px 120px;
+    z-index: 0;
+    opacity: 0.5;
+    will-change: auto;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
 }
 
+// Contact content layout
 .contact-content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: $space-4xl;
 }
 
-// Leadership team contact cards
+// Leadership contacts section
 .leadership-contacts {
   h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: $light-text;
+    font-family: $font-family-heading;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: $space-2xl;
+    color: $text-color;
     position: relative;
-    padding-bottom: 0.75rem;
-    
+    padding-bottom: $space-lg;
+    letter-spacing: $letter-spacing-tight;
+
+    // Modern underline
     &::after {
-      content: '';
+      content: "";
       position: absolute;
-      width: 70px;
+      width: 80px;
       height: 3px;
-      background: linear-gradient(90deg, $primary-color, $accent-color-1);
+      background: $gradient-primary;
       bottom: 0;
       left: 0;
       border-radius: 2px;
@@ -34,148 +70,271 @@
   }
 }
 
+// Modern contact cards with optimized glass morphism
 .contact-card {
   display: flex;
   align-items: center;
-  background: linear-gradient(145deg, 
-    rgba($secondary-color, 0.6), 
-    rgba($secondary-color, 0.3)
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: $border-radius-lg;
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $border-radius-xl;
+  backdrop-filter: blur(8px);
   overflow: hidden;
-  box-shadow: $box-shadow;
-  transition: transform $transition-speed, box-shadow $transition-speed;
-  border: 1px solid rgba($border-color, 0.2);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  box-shadow: $shadow-lg;
+  transition: all $transition-base;
   position: relative;
-  
+  margin-bottom: $space-2xl;
+  will-change: transform;
+
+  // Optimized hover gradient overlay
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, $primary-color, $accent-color-1);
-    opacity: 0.7;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-color, 0.03) 0%,
+      rgba($accent-primary, 0.01) 100%
+    );
+    opacity: 0;
+    transition: opacity $transition-base;
+    z-index: 0;
+    will-change: opacity;
   }
-  
+
   &:hover {
     transform: translateY(-5px);
-    box-shadow: $box-shadow-hover;
+    border-color: rgba($primary-color, 0.3);
+    box-shadow: $shadow-xl;
+
+    &::before {
+      opacity: 1;
+    }
   }
-  
+
+  // Contact photo styling
+  .contact-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: $border-radius-lg;
+    flex-shrink: 0;
+    margin: $space-xl;
+    margin-right: $space-lg;
+    overflow: hidden;
+    border: 2px solid rgba($primary-color, 0.2);
+    position: relative;
+    z-index: 1;
+    transition: all $transition-base;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(1.1);
+      transition: all $transition-base;
+    }
+  }
+
+  &:hover .contact-photo {
+    border-color: rgba($primary-color, 0.4);
+
+    img {
+      filter: grayscale(0%) contrast(1.2);
+      transform: scale(1.05);
+    }
+  }
+
+  // Contact info section
+  .contact-info {
+    flex: 1;
+    padding: $space-xl $space-xl $space-xl 0;
+    position: relative;
+    z-index: 1;
+
+    h3 {
+      font-family: $font-family-heading;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: $space-sm;
+      color: $text-color;
+      letter-spacing: $letter-spacing-tight;
+    }
+
+    h4 {
+      font-size: 0.9rem;
+      color: $primary-color;
+      margin-bottom: $space-lg;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-wide;
+    }
+
+    // Contact method styling
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: $space-sm;
+      padding: $space-sm $space-md;
+      background: rgba($primary-color, 0.08);
+      border: 1px solid rgba($primary-color, 0.15);
+      border-radius: $border-radius;
+      transition: all $transition-base;
+      margin-bottom: $space-sm;
+
+      &:hover {
+        background: rgba($primary-color, 0.12);
+        border-color: rgba($primary-color, 0.25);
+        transform: translateX(3px);
+      }
+
+      .contact-icon {
+        font-size: 1rem;
+        min-width: 20px;
+        text-align: center;
+
+        // Discord icon styling - Optimized
+        .discord-mini-icon {
+          width: 16px;
+          height: 16px;
+          filter: hue-rotate(220deg) saturate(2);
+        }
+      }
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: color $transition-base;
+
+        &:hover {
+          color: $accent-primary;
+        }
+      }
+
+      span:not(.contact-icon) {
+        color: $text-muted;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // Responsive layout for mobile
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.5rem 1.25rem;
-  }
-}
+    padding: $space-xl;
 
-.contact-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 1.5rem;
-  border: 2px solid rgba($light-text, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  flex-shrink: 0;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  @media (max-width: $breakpoint-sm) {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-}
-
-.contact-info {
-  flex: 1;
-  
-  h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.2rem;
-    color: $light-text;
-  }
-  
-  h4 {
-    color: $primary-color;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
-    opacity: 0.9;
-  }
-}
-
-.contact-method {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  
-  .contact-icon {
-    margin-right: 0.75rem;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    
-    .discord-mini-icon {
-      width: 20px;
-      height: 20px;
+    .contact-photo {
+      margin: 0 0 $space-lg 0;
+      align-self: center;
     }
-  }
-  
-  a {
-    transition: color $transition-speed;
-    position: relative;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -2px;
-      left: 0;
-      background: linear-gradient(90deg, $primary-color, $accent-color-1);
-      transition: width $transition-speed;
-      border-radius: 1px;
-    }
-    
-    &:hover {
-      color: $accent-color-1;
-      
-      &::after {
-        width: 100%;
+
+    .contact-info {
+      padding: 0;
+      text-align: center;
+      width: 100%;
+
+      .contact-method {
+        justify-content: center;
       }
     }
   }
 }
 
-// General contact section
+// Messaging section styling (for GroupMe QR code section) - Optimized for performance
+.messaging-section {
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $border-radius-xl;
+  backdrop-filter: blur(6px);
+  padding: $space-3xl;
+  text-align: center;
+  box-shadow: $shadow-lg;
+  margin-top: $space-3xl;
+
+  h2 {
+    font-family: $font-family-heading;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: $space-xl;
+    color: $text-color;
+    letter-spacing: $letter-spacing-tight;
+  }
+
+  .messaging-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $space-xl;
+    margin-top: $space-2xl;
+  }
+
+  .messaging-option {
+    background: rgba($primary-color, 0.05);
+    border: 1px solid rgba($primary-color, 0.1);
+    border-radius: $border-radius-lg;
+    padding: $space-xl;
+    transition: all $transition-base;
+
+    &:hover {
+      background: rgba($primary-color, 0.08);
+      border-color: rgba($primary-color, 0.2);
+      transform: translateY(-3px);
+    }
+
+    h3 {
+      font-family: $font-family-heading;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: $space-md;
+      color: $text-color;
+    }
+
+    p {
+      color: $text-muted;
+      margin-bottom: $space-lg;
+      line-height: 1.6;
+    }
+
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border-radius: $border-radius;
+      overflow: hidden;
+      border: 2px solid rgba($primary-color, 0.2);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// General inquiries section
 .general-contact {
   h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: $light-text;
+    font-family: $font-family-heading;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: $space-2xl;
+    color: $text-color;
     position: relative;
-    padding-bottom: 0.75rem;
-    
+    padding-bottom: $space-lg;
+    letter-spacing: $letter-spacing-tight;
+
+    // Modern underline
     &::after {
-      content: '';
+      content: "";
       position: absolute;
-      width: 70px;
+      width: 80px;
       height: 3px;
-      background: linear-gradient(90deg, $primary-color, $accent-color-1);
+      background: $gradient-primary;
       bottom: 0;
       left: 0;
       border-radius: 2px;
@@ -183,136 +342,166 @@
   }
 }
 
+// General contact card with optimized glass morphism
 .general-card {
   display: flex;
   align-items: center;
-  background: linear-gradient(145deg, 
-    rgba($secondary-color, 0.7), 
-    rgba($secondary-color, 0.4)
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: $border-radius-lg;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: $box-shadow;
-  border: 1px solid rgba($border-color, 0.2);
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $border-radius-xl;
+  backdrop-filter: blur(6px);
+  padding: $space-3xl;
+  box-shadow: $shadow-lg;
+  transition: all $transition-base;
   position: relative;
   overflow: hidden;
-  
+
+  // Hover gradient overlay
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba($accent-color-2, 0.1), transparent 70%);
-    border-radius: 50%;
-    filter: blur(30px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-color, 0.05) 0%,
+      rgba($accent-primary, 0.02) 100%
+    );
+    opacity: 0;
+    transition: opacity $transition-base;
+    z-index: 0;
   }
-  
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($primary-color, 0.3);
+    box-shadow: $shadow-xl;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  .general-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: $border-radius-lg;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-color, 0.1),
+      rgba($accent-primary, 0.05)
+    );
+    border: 2px solid rgba($primary-color, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: $space-xl;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: all $transition-base;
+
+    .email-icon {
+      width: 32px;
+      height: 32px;
+      filter: hue-rotate(220deg) saturate(2);
+      transition: all $transition-base;
+    }
+  }
+
+  &:hover .general-icon {
+    border-color: rgba($primary-color, 0.4);
+    background: linear-gradient(
+      135deg,
+      rgba($primary-color, 0.15),
+      rgba($accent-primary, 0.08)
+    );
+
+    .email-icon {
+      filter: hue-rotate(220deg) saturate(3);
+      transform: scale(1.1);
+    }
+  }
+
+  .general-info {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+
+    h3 {
+      font-family: $font-family-heading;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: $space-sm;
+      letter-spacing: $letter-spacing-tight;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $text-muted;
+      margin-bottom: $space-lg;
+      line-height: 1.6;
+    }
+
+    .highlight-email {
+      display: inline-flex;
+      align-items: center;
+      padding: $space-md $space-xl;
+      background: rgba($primary-color, 0.1);
+      border: 2px solid rgba($primary-color, 0.2);
+      border-radius: $border-radius-lg;
+      color: $primary-color;
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 600;
+      transition: all $transition-base;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $gradient-primary;
+        border-radius: $border-radius-lg;
+        opacity: 0;
+        transition: opacity $transition-base;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: white;
+        border-color: transparent;
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Responsive layout for mobile
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
     text-align: center;
-    padding: 1.75rem 1.25rem;
-  }
-}
+    padding: $space-2xl;
 
-.general-icon {
-  width: 80px;
-  height: 80px;
-  margin-right: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  
-  img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-  }
-  
-  @media (max-width: $breakpoint-sm) {
-    margin-right: 0;
-    margin-bottom: 1.25rem;
-  }
-}
-
-.general-info {
-  flex: 1;
-  
-  h3 {
-    font-size: 1.4rem;
-    color: $light-text;
-    margin-bottom: 0.75rem;
-  }
-  
-  p {
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-  
-  .highlight-email {
-    font-size: 1.2rem;
-    color: $accent-color-1;
-    font-weight: 600;
-    display: inline-block;
-    transition: all $transition-speed;
-    
-    &:hover {
-      transform: translateY(-2px);
-      text-shadow: 0 4px 8px rgba($accent-color-1, 0.4);
+    .general-icon {
+      margin: 0 0 $space-xl 0;
     }
-  }
-}
 
-// Feedback section (DEPRECATED)
-.feedback-section {
-  background: linear-gradient(145deg, 
-    rgba($secondary-color, 0.6), 
-    rgba($secondary-color, 0.3)
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: $border-radius-lg;
-  padding: 2.5rem;
-  box-shadow: $box-shadow;
-  border: 1px solid rgba($border-color, 0.2);
-  text-align: center;
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.25rem;
-    color: $light-text;
-    position: relative;
-    padding-bottom: 0.75rem;
-    display: inline-block;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, $primary-color, $accent-color-1);
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 2px;
+    .general-info {
+      .highlight-email {
+        width: 100%;
+        justify-content: center;
+      }
     }
-  }
-  
-  p {
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-  
-  .btn {
-    min-width: 220px;
   }
 }

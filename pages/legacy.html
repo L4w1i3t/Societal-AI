@@ -1,106 +1,158 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legacy - ATIH-UVA</title>
-    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legacy - Societal AI at UVA</title>
+    <!-- Security Headers (Note: X-Frame-Options and frame-ancestors should be set via HTTP headers in production) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- Content Security Policy -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+    />
+
+    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
     <!-- Header will be dynamically inserted here -->
     <div id="header-container"></div>
 
     <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Our Legacy</h1>
-            </div>
-        </section>
+      <section class="page-header">
+        <div class="container">
+          <h1>Our Legacy</h1>
+        </div>
+      </section>
 
-        <!-- Past Board Members Section -->
-        <section class="legacy-section">
-            <div class="container">
-                <h2 class="section-title">Past Board Members</h2>
-                <p class="section-description">Hall of Fame of the dedicated leaders who built our organization</p>
-                
-                <!-- Graduating Class of 2025 -->
-                <div class="legacy-dropdown">
-                    <button class="dropdown-toggle" data-target="class-2025">
-                        <span>Class of 2025</span>
-                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-content" id="class-2025">
-                        <div class="board-grid">
+      <!-- Past Board Members Section -->
+      <section class="legacy-section">
+        <div class="container">
+          <h2 class="section-title">Past Board Members</h2>
+          <p class="section-description">
+            Hall of Fame of the dedicated leaders who built our organization
+          </p>
 
-                            <div class="board-card">
-                                <div class="board-photo">
-                                    <img src="../assets/legacy/selene.webp" alt="Sarah Johnson">
-                                </div>
-                                <div class="board-info">
-                                    <h3>Yinuo Zeng (Selene)</h3>
-                                    <h4>Co-Founder</h4>
-                                    <p class="major">Degree: Political Science, Philosophy</p>
-                                </div>
-                            </div>
-                            <!-- More entries will go here -->
-                        </div>
-                    </div>
+          <!-- Graduating Class of 2025 -->
+          <div class="legacy-dropdown">
+            <button class="dropdown-toggle" data-target="class-2025">
+              <span>Class of 2025</span>
+              <svg
+                class="dropdown-arrow"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content" id="class-2025">
+              <div class="board-grid">
+                <div class="board-card">
+                  <div class="board-photo">
+                    <img
+                      src="../assets/legacy/selene.webp"
+                      alt="Sarah Johnson"
+                    />
+                  </div>
+                  <div class="board-info">
+                    <h3>Yinuo Zeng (Selene)</h3>
+                    <h4>Co-Founder</h4>
+                    <p class="major">Degree: Political Science, Philosophy</p>
+                  </div>
                 </div>
-                <!-- More classes will go here -->
+                <!-- More entries will go here -->
+              </div>
             </div>
-        </section>
+          </div>
+          <!-- More classes will go here -->
+        </div>
+      </section>
 
-        <!-- Past Events Section -->
-        <section class="legacy-section">
-            <div class="container">
-                <h2 class="section-title">Past Events</h2>
-                <p class="section-description">Memorable events and milestones from previous years</p>
-                
-                <!-- Academic Year 2024-2025 -->
-                <div class="legacy-dropdown">
-                    <button class="dropdown-toggle" data-target="events-2024-2025">
-                        <span>Academic Year 2024-2025</span>
-                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-content" id="events-2024-2025">
-                        <div class="events-list">
+      <!-- Past Events Section -->
+      <section class="legacy-section">
+        <div class="container">
+          <h2 class="section-title">Past Events</h2>
+          <p class="section-description">
+            Memorable events and milestones from previous years
+          </p>
 
-                            <div class="event-item">
-                                <div class="event-date">
-                                    <span class="month">MONTH</span>
-                                    <span class="day">DAY</span>
-                                    <span class="year">YEAR</span>
-                                </div>
-                                <div class="event-details">
-                                    <h3>DUMMY TITLE</h3>
-                                    <p class="event-location">DUMMY LOCATION</p>
-                                    <p class="event-description">DUMMY DESCRIPTION</p>
-                                </div>
-                            </div>
-                            <!-- More events will go here -->
-                        </div>
-                    </div>
+          <!-- Academic Year 2024-2025 -->
+          <div class="legacy-dropdown">
+            <button class="dropdown-toggle" data-target="events-2024-2025">
+              <span>Academic Year 2024-2025</span>
+              <svg
+                class="dropdown-arrow"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div class="dropdown-content" id="events-2024-2025">
+              <div class="events-list">
+                <div class="event-item">
+                  <div class="event-date">
+                    <span class="month">MONTH</span>
+                    <span class="day">DAY</span>
+                    <span class="year">YEAR</span>
+                  </div>
+                  <div class="event-details">
+                    <h3>DUMMY TITLE</h3>
+                    <p class="event-location">DUMMY LOCATION</p>
+                    <p class="event-description">DUMMY DESCRIPTION</p>
+                  </div>
                 </div>
-                <!-- More academic years will go here -->
+                <!-- More events will go here -->
+              </div>
             </div>
-        </section>
+          </div>
+          <!-- More academic years will go here -->
+        </div>
+      </section>
     </main>
 
     <!-- Mobile menu overlay -->
     <div class="mobile-menu-overlay"></div>
-    
+
     <!-- Footer will be dynamically inserted here -->
     <div id="footer-container"></div>
 
     <script src="../components/addComponents.js"></script>
     <script src="../js/legacyDropdowns.js"></script>
-</body>
+  </body>
 </html>

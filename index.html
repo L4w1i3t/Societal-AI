@@ -1,42 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | ATIH-UVA</title>
-    <link rel="icon" type="image/x-icon" href="assets/gui/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- Load versioning system first -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Societal AI at UVA | Advancing Responsible AI Technology</title>
+
+    <!-- Security Headers (Note: X-Frame-Options and frame-ancestors should be set via HTTP headers in production) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- Content Security Policy -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+    />
+
+    <link rel="icon" type="image/x-icon" href="assets/gui/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Load security utilities first -->
+    <script src="js/security.js"></script>
+    <!-- Load versioning system -->
     <script src="js/version.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
     <!-- Header will be dynamically inserted here -->
     <div id="header-container"></div>
 
     <main>
-        <section class="hero">
-            <!-- Decorative glow circles -->
-            <div class="glow-circle circle-1 primary"></div>
-            <div class="glow-circle circle-2 accent-1"></div>
-            
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Welcome to <span class="highlight">All Tech is Human</span> at UVA!</h1>
-                    <p>Building a diverse, vibrant, and supportive community that deeply cares about the responsible use of AI technology.</p>
-                    <p>We're bringing together humanities and technology to raise awareness about AI's significant impact on our lives and develop viable solutions for building awesome AI communities on grounds and beyond.</p>
-                    <div class="btn-group">
-                        <a href="pages/about.html" class="btn btn-primary btn-lg">Learn More</a>
-                        <a href="pages/join.html" class="btn btn-outline">Join Us</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="assets/gui/logo.webp" alt="ATIH-UVA Logo" class="featured-logo">
-                </div>
+      <!-- Hero Section with Parallax Background -->
+      <section class="hero-modern">
+        <div class="parallax-bg">
+          <div class="gradient-overlay"></div>
+          <div class="neural-grid"></div>
+          <div class="floating-particles"></div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="title-line">Advancing</span>
+              <span class="title-line gradient-text">Responsible Tech</span>
+            </h1>
+            <p class="hero-subtitle">
+              Building the future of artificial intelligence through
+              interdisciplinary collaboration, ethical innovation, and community
+              engagement.
+            </p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Possibilities</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">UVA</span>
+                <span class="stat-label">Community</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2024</span>
+                <span class="stat-label">Year Established</span>
+              </div>
             </div>
-        </section>
+            <div class="hero-actions">
+              <a href="pages/join.html" class="btn btn-primary-modern">
+                <span>Join Our Mission</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M1 8H15M15 8L8 1M15 8L8 15"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#about" class="btn btn-outline-modern">Discover More</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="visual-container">
+              <div class="ai-nodes">
+                <div class="node node-1"></div>
+                <div class="node node-2"></div>
+                <div class="node node-3"></div>
+                <div class="connection connection-1"></div>
+                <div class="connection connection-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-modern">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge">Our Foundation</div>
+            <h2 class="section-title">Shaping Tomorrow's AI Landscape</h2>
+            <p class="section-subtitle">
+              We bridge the gap between technological advancement and humanistic
+              values, creating a future where AI serves all of humanity.
+            </p>
+          </div>
+
+          <div class="quote-modern">
+            <blockquote>
+              "The true potential of AI lies in its ability to uplift humanity
+              while safeguarding and empowering future generations."
+            </blockquote>
+            <cite>— Amit Ray</cite>
+          </div>
+
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div class="pillar-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path
+                    d="M16 4L20 12H12L16 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16 28L20 20H12L16 28Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4 16L12 12V20L4 16Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M28 16L20 12V20L28 16Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Our Purpose</h3>
+              <p>
+                We aim to raise awareness that AI technology will significantly
+                reshape our lives. The AI 2027 Project serves as a wake-up call:
+                by 2027, powerful agentic AI systems may become deeply
+                integrated into society. We work toward building an awesome AI
+                community that can be adopted everywhere.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <circle
+                    cx="16"
+                    cy="8"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="8"
+                    cy="20"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="24"
+                    cy="20"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16 12V16L8 16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M16 16L24 16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>Our Values</h3>
+              <p>
+                The future of AI belongs to everyone, not just tech people. We
+                embrace interdisciplinary thinking, bringing together diverse
+                voices from humanities and technology. No matter your
+                background—computer science or otherwise—you are welcome here.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path
+                    d="M16 4V28"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M4 16H28"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle cx="16" cy="16" r="4" fill="currentColor" />
+                </svg>
+              </div>
+              <h3>Our Mission</h3>
+              <p>
+                Our mission is to engage UVA students and faculty in meaningful
+                dialogues about AI's impact. By 2027, we envision a UVA where
+                students and faculty are equipped, informed, and empowered to
+                confront the era of agentic AI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Mobile menu overlay -->
@@ -46,5 +261,6 @@
     <div id="footer-container"></div>
 
     <script src="components/addComponents.js"></script>
-</body>
+    <script src="js/parallax.js"></script>
+  </body>
 </html>

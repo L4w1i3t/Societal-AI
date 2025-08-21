@@ -1,85 +1,121 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - ATIH-UVA</title>
-    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Societal AI at UVA</title>
+
+    <!-- Security Headers (Note: X-Frame-Options and frame-ancestors should be set via HTTP headers in production) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- Content Security Policy - Updated to allow FullCalendar CDN -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+    />
+
+    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Preload critical assets -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js" as="script">
-    <!-- Load versioning system first -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"
+      as="script"
+    />
+
+    <!-- Load security utilities first -->
+    <script src="../js/security.js"></script>
+    <!-- Load versioning system -->
     <script src="../js/version.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main.css" />
     <!-- FullCalendar CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
+    />
     <style>
-        /* Inline critical CSS to prevent layout shifts */
-        .calendar-container {
-            min-height: 650px;
-            height: auto;
-            max-width: 100%;
-            position: relative;
-        }
-        #calendar {
-            min-height: 600px;
-            position: relative;
-            height: auto !important;
-        }
-        #event-list {
-            min-height: 300px;
-        }
-        
-        /* Fix for FullCalendar view getting cut off */
-        .fc-view-harness {
-            height: auto !important;
-            min-height: 500px;
-        }
-        .fc-scrollgrid-sync-table {
-            height: auto !important;
-        }
+      /* Inline critical CSS to prevent layout shifts */
+      .calendar-container {
+        min-height: 650px;
+        height: auto;
+        max-width: 100%;
+        position: relative;
+      }
+      #calendar {
+        min-height: 600px;
+        position: relative;
+        height: auto !important;
+      }
+      #event-list {
+        min-height: 300px;
+      }
+
+      /* Fix for FullCalendar view getting cut off */
+      .fc-view-harness {
+        height: auto !important;
+        min-height: 500px;
+      }
+      .fc-scrollgrid-sync-table {
+        height: auto !important;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header will be dynamically inserted here -->
     <div id="header-container"></div>
 
     <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Events Calendar</h1>
-                <p>Find our upcoming events, meetings, and activities</p>
-            </div>
-        </section>
-
-        <section class="calendar-section">
-            <div class="container">
-                <div class="calendar-container loading">
-                    <div id="calendar"></div>
-                </div>
-
-                <div class="upcoming-events">
-                    <h2>Upcoming Events</h2>
-                    <div id="event-list">
-                        <!-- Event skeletons will be added by JS on page load -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div id="event-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2 id="modal-title"></h2>
-                <p id="modal-date"></p>
-                <p id="modal-time"></p>
-                <p id="modal-location"></p>
-                <div id="modal-description"></div>
-            </div>
+      <section class="page-header">
+        <div class="container">
+          <h1>Events Calendar</h1>
+          <p>Find our upcoming events, meetings, and activities</p>
         </div>
+      </section>
+
+      <section class="calendar-section">
+        <div class="container">
+          <div class="calendar-container loading">
+            <div id="calendar"></div>
+          </div>
+
+          <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div id="event-list">
+              <!-- Event skeletons will be added by JS on page load -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="event-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-date"></p>
+          <p id="modal-time"></p>
+          <p id="modal-location"></p>
+          <div id="modal-description"></div>
+        </div>
+      </div>
     </main>
 
     <!-- Mobile menu overlay -->
@@ -92,5 +128,5 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
     <script src="../components/addComponents.js"></script>
     <script src="../components/calendar.js"></script>
-</body>
+  </body>
 </html>

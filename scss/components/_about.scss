@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
 .about-section {
   padding: 3rem 0 5rem;
@@ -7,36 +7,36 @@
 .about-content {
   max-width: 800px;
   margin: 0 auto;
-  
+
   h2 {
-    color: $light-text;
+    color: $text-color;
     font-size: 1.8rem;
     margin: 2.5rem 0 1rem;
-    
+
     &:first-child {
       margin-top: 0;
     }
   }
-  
+
   p {
     margin-bottom: 1.5rem;
     line-height: 1.7;
     font-size: 1.05rem;
   }
-  
+
   .about-quote {
     margin: 2.5rem 0;
     padding: 1.5rem 2rem;
     background-color: rgba($secondary-color, 0.5);
     border-left: 4px solid $primary-color;
     border-radius: $border-radius;
-    
+
     blockquote {
       font-style: italic;
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
     }
-    
+
     cite {
       display: block;
       text-align: right;
@@ -44,17 +44,17 @@
       opacity: 0.8;
     }
   }
-  
+
   .about-list {
     margin-left: 1.5rem;
     margin-bottom: 2rem;
-    
+
     li {
       margin-bottom: 0.8rem;
       position: relative;
       padding-left: 1rem;
       list-style-type: none;
-      
+
       &::before {
         content: "";
         position: absolute;

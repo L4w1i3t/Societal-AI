@@ -1,100 +1,134 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - ATIH-UVA</title>
-    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- Load versioning system first -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Societal AI at UVA</title>
+
+    <!-- Security Headers (Note: X-Frame-Options and frame-ancestors should be set via HTTP headers in production) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- Content Security Policy -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+    />
+
+    <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Load security utilities first -->
+    <script src="../js/security.js"></script>
+    <!-- Load versioning system -->
     <script src="../js/version.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
     <!-- Header will be dynamically inserted here -->
     <div id="header-container"></div>
 
     <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Contact Us</h1>
-                <p>Reach out to our team with questions, suggestions, or feedback</p>
-            </div>
-        </section>
+      <section class="page-header">
+        <div class="container">
+          <h1>Contact Us</h1>
+          <p>Reach out to our team with questions, suggestions, or feedback</p>
+        </div>
+      </section>
 
-        <section class="contact-section">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="leadership-contacts">
-                        <h2>Leadership Team</h2>
-                        
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="../assets/team/fan.webp" alt="Xuxin Fan">
-                            </div>
-                            <div class="contact-info">
-                                <h3>Xuxin Fan</h3>
-                                <h4>President</h4>
-                                <div class="contact-method">
-                                    <span class="contact-icon">📧</span>
-                                    <a href="mailto:wrc5gs@virginia.edu">wrc5gs@virginia.edu</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="../assets/team/owen.webp" alt="Owen Watzlavick">
-                            </div>
-                            <div class="contact-info">
-                                <h3>Owen Watzlavick</h3>
-                                <h4>Vice President</h4>
-                                <div class="contact-method">
-                                    <span class="contact-icon">📧</span>
-                                    <a href="mailto:sbx7gq@virginia.edu">sbx7gq@virginia.edu</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-photo">
-                                <img src="../assets/team/charles.webp" alt="Charles Melvin">
-                            </div>
-                            <div class="contact-info">
-                                <h3>Charles Melvin</h3>
-                                <h4>Web Admin</h4>
-                                <div class="contact-method">
-                                    <span class="contact-icon">📧</span>
-                                    <a href="mailto:jgm6jy@virginia.edu">jgm6jy@virginia.edu</a>
-                                </div>
-                                <div class="contact-method">
-                                    <span class="contact-icon">
-                                        <img src="../assets/gui/discord-icon.svg" alt="Discord" class="discord-mini-icon">
-                                    </span>
-                                    <span>@L4w1i3t</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <section class="contact-section">
+        <div class="container">
+          <div class="contact-content">
+            <div class="leadership-contacts">
+              <h2>Leadership Team</h2>
 
-                    <div class="general-contact">
-                        <h2>General Inquiries</h2>
-                        <div class="general-card">
-                            <div class="general-icon">
-                                <img src="../assets/gui/email-icon.svg" alt="Email" class="email-icon">
-                            </div>
-                            <div class="general-info">
-                                <h3>Email Us</h3>
-                                <p>For general questions and information:</p>
-                                <a href="mailto:atih_at_uva@virginia.edu" class="highlight-email">atih_at_uva@virginia.edu</a>
-                            </div>
-                        </div>
-                    </div>
+              <div class="contact-card">
+                <div class="contact-photo">
+                  <img src="../assets/team/fan.webp" alt="Xuxin Fan" />
                 </div>
+                <div class="contact-info">
+                  <h3>Xuxin Fan</h3>
+                  <h4>President</h4>
+                  <div class="contact-method">
+                    <a href="mailto:wrc5gs@virginia.edu">wrc5gs@virginia.edu</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-photo">
+                  <img src="../assets/team/owen.webp" alt="Owen Watzlavick" />
+                </div>
+                <div class="contact-info">
+                  <h3>Owen Watzlavick</h3>
+                  <h4>Vice President</h4>
+                  <div class="contact-method">
+                    <a href="mailto:sbx7gq@virginia.edu">sbx7gq@virginia.edu</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-photo">
+                  <img src="../assets/team/charles.webp" alt="Charles Melvin" />
+                </div>
+                <div class="contact-info">
+                  <h3>Charles Melvin</h3>
+                  <h4>Web Admin</h4>
+                  <div class="contact-method">
+                    <a href="mailto:jgm6jy@virginia.edu">jgm6jy@virginia.edu</a>
+                  </div>
+                  <div class="contact-method">
+                    <span class="contact-icon">
+                      <img
+                        src="../assets/gui/discord-icon.svg"
+                        alt="Discord"
+                        class="discord-mini-icon"
+                      />
+                    </span>
+                    <span>@L4w1i3t</span>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+
+            <div class="general-contact">
+              <h2>General Inquiries</h2>
+              <div class="general-card">
+                <div class="general-icon">
+                  <img
+                    src="../assets/gui/email-icon.svg"
+                    alt="Email"
+                    class="email-icon"
+                  />
+                </div>
+                <div class="general-info">
+                  <h3>Email Us</h3>
+                  <p>For general questions and information:</p>
+                  <a
+                    href="mailto:atih_at_uva@virginia.edu"
+                    class="highlight-email"
+                    >atih_at_uva@virginia.edu</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Mobile menu overlay -->
@@ -104,5 +138,5 @@
     <div id="footer-container"></div>
 
     <script src="../components/addComponents.js"></script>
-</body>
+  </body>
 </html>

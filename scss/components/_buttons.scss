@@ -1,44 +1,118 @@
-@use 'sass:color';
-@use '../variables' as *;
+@use "sass:color";
+@use "../variables" as *;
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
   padding: 0.75rem 1.5rem;
-  border-radius: $border-radius;
-  font-weight: 600;
+  border-radius: $border-radius-xl;
+  font-weight: 500;
+  font-size: 0.9rem;
   text-align: center;
   cursor: pointer;
-  transition: all $transition-speed;
+  transition: all $transition-base;
   border: none;
   position: relative;
-  z-index: 1;
-  
+  text-decoration: none;
+  font-family: $font-family-base;
+  letter-spacing: $letter-spacing-wide;
+
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: $box-shadow-hover;
+    transform: translateY(-1px);
+    text-decoration: none;
   }
-  
+
   &:active {
     transform: translateY(0);
   }
+
+  svg {
+    transition: transform $transition-base;
+  }
+
+  &:hover svg {
+    transform: translateX(2px);
+  }
 }
 
-.btn-primary {
-  background: linear-gradient(45deg, $primary-color, color.adjust($primary-color, $lightness: 10%));
-  color: $light-text;
-  
+// Modern Primary Button
+.btn-primary-modern {
+  background: $gradient-primary;
+  color: white;
+  border: 1px solid transparent;
+  box-shadow: $shadow-lg;
+
   &:hover {
-    background: linear-gradient(45deg, color.adjust($primary-color, $lightness: 5%), color.adjust($primary-color, $lightness: 15%));
-    color: $light-text;
+    box-shadow: $shadow-xl;
+    background: $gradient-secondary;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow:
+      $shadow-xl,
+      0 0 0 3px rgba($primary-color, 0.2);
+  }
+}
+
+// Modern Outline Button
+.btn-outline-modern {
+  background: $glass-bg;
+  color: $text-color;
+  border: 1px solid $glass-border;
+  backdrop-filter: blur(12px);
+
+  &:hover {
+    background: rgba($primary-color, 0.1);
+    border-color: rgba($primary-color, 0.3);
+    color: $text-color;
+    box-shadow: $shadow-lg;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow:
+      $shadow-lg,
+      0 0 0 3px rgba($primary-color, 0.2);
+  }
+}
+
+// Legacy buttons (keeping for backwards compatibility)
+.btn-primary {
+  background: linear-gradient(
+    45deg,
+    $primary-color,
+    color.adjust($primary-color, $lightness: 10%)
+  );
+  color: white;
+
+  &:hover {
+    background: linear-gradient(
+      45deg,
+      color.adjust($primary-color, $lightness: 5%),
+      color.adjust($primary-color, $lightness: 15%)
+    );
+    color: white;
   }
 }
 
 .btn-accent {
-  background: linear-gradient(45deg, $accent-color-1, color.adjust($accent-color-1, $lightness: 10%));
-  color: $dark-text;
-  
+  background: linear-gradient(
+    45deg,
+    $accent-primary,
+    color.adjust($accent-primary, $lightness: 10%)
+  );
+  color: $text-dark;
+
   &:hover {
-    background: linear-gradient(45deg, color.adjust($accent-color-1, $lightness: 5%), color.adjust($accent-color-1, $lightness: 15%));
+    background: linear-gradient(
+      45deg,
+      color.adjust($accent-primary, $lightness: 5%),
+      color.adjust($accent-primary, $lightness: 15%)
+    );
   }
 }
 
@@ -46,7 +120,7 @@
   background: transparent;
   color: $primary-color;
   border: 2px solid $primary-color;
-  
+
   &:hover {
     background-color: rgba($primary-color, 0.1);
     color: color.adjust($primary-color, $lightness: 10%);
