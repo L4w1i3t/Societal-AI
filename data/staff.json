@@ -1,0 +1,36 @@
+{
+  "staff": [
+    {
+      "id": "fan",
+      "name": "Xuxin Fan",
+      "title": "President, Policy Chair",
+      "degree": "Mathematics, Public Policy",
+      "bio": "Bio coming soon.",
+      "image": "../assets/team/fan.webp"
+    },
+    {
+      "id": "owen",
+      "name": "Owen Watzlavick",
+      "title": "Vice President, Policy Chair",
+      "degree": "Computer Science, Economics",
+      "bio": "Bio coming soon.",
+      "image": "../assets/team/owen.webp"
+    },
+    {
+      "id": "charles",
+      "name": "Charles Melvin",
+      "title": "Web Admin/Developer, Research Chair",
+      "degree": "Cognitive Science, Computer Science, Astronomy",
+      "bio": "Bio coming soon.",
+      "image": "../assets/team/charles.webp"
+    },
+    {
+      "id": "arthur",
+      "name": "Arthur Oker",
+      "title": "Philosophy Chair, Treasurer",
+      "degree": "Philosophy, Computer Science",
+      "bio": "Bio coming soon.",
+      "image": "../assets/team/arthur.webp"
+    }
+  ]
+}

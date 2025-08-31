@@ -1,0 +1,35 @@
+{
+  "pastBoardMembers": {
+    "class-2025": {
+      "title": "Class of 2025",
+      "members": [
+        {
+          "id": "selene",
+          "name": "Yinuo Zeng (Selene)",
+          "title": "Co-Founder",
+          "degree": "Political Science, Philosophy",
+          "bio": "Co-founder",
+          "image": "../assets/legacy/selene.webp"
+        }
+      ]
+    }
+  },
+  "pastEvents": {
+    "2024-2025": {
+      "title": "Academic Year 2024-2025",
+      "events": [
+        {
+          "id": "dummy",
+          "date": {
+            "month": "AUG",
+            "day": "00",
+            "year": "2024"
+          },
+          "title": "DUMMY",
+          "location": "DUMMY",
+          "description": "DUMMY"
+        }
+      ]
+    }
+  }
+}

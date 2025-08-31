@@ -1,0 +1,20 @@
+{
+    "staff-limbo": [
+        {
+        "id": "lexie",
+        "name": "Lexie Chen",
+        "title": "Webmaster",
+        "degree": "Computer Science, Data Science",
+        "bio": "Bio coming soon.",
+        "image": "../assets/team/lexie.webp"
+        },
+        {
+        "id": "justin",
+        "name": "Tianyi Zhang (Justin)",
+        "title": "Marketing/Social Chair",
+        "degree": "Undecided",
+        "bio": "Bio coming soon.",
+        "image": "../assets/team/justin.webp"
+        }
+    ]
+}

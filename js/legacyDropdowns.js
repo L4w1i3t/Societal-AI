@@ -1,15 +1,24 @@
 // Legacy page dropdown functionality
-document.addEventListener("DOMContentLoaded", function () {
+function initializeLegacyDropdowns() {
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
+  // Remove existing event listeners by cloning elements
   dropdownToggles.forEach((toggle) => {
+    const newToggle = toggle.cloneNode(true);
+    toggle.parentNode.replaceChild(newToggle, toggle);
+  });
+
+  // Get the updated node list after cloning
+  const newDropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  newDropdownToggles.forEach((toggle) => {
     toggle.addEventListener("click", function () {
       const targetId = this.getAttribute("data-target");
       const targetContent = document.getElementById(targetId);
       const isActive = this.classList.contains("active");
 
       // Close all other dropdowns
-      dropdownToggles.forEach((otherToggle) => {
+      newDropdownToggles.forEach((otherToggle) => {
         if (otherToggle !== this) {
           otherToggle.classList.remove("active");
           const otherTargetId = otherToggle.getAttribute("data-target");
@@ -51,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Add keyboard accessibility
-  dropdownToggles.forEach((toggle) => {
+  newDropdownToggles.forEach((toggle) => {
     toggle.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -63,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close dropdowns when clicking outside
   document.addEventListener("click", function (e) {
     if (!e.target.closest(".legacy-dropdown")) {
-      dropdownToggles.forEach((toggle) => {
+      newDropdownToggles.forEach((toggle) => {
         toggle.classList.remove("active");
         const targetId = toggle.getAttribute("data-target");
         const targetContent = document.getElementById(targetId);
@@ -73,4 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+}
+
+// Initialize on DOM ready
+document.addEventListener("DOMContentLoaded", function () {
+  initializeLegacyDropdowns();
 });
+
+// Make the function globally available
+window.initializeLegacyDropdowns = initializeLegacyDropdowns;

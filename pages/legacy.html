@@ -49,48 +49,11 @@
           <p class="section-description">
             Hall of Fame of the dedicated leaders who built our organization
           </p>
-
-          <!-- Graduating Class of 2025 -->
-          <div class="legacy-dropdown">
-            <button class="dropdown-toggle" data-target="class-2025">
-              <span>Class of 2025</span>
-              <svg
-                class="dropdown-arrow"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 6L8 10L12 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <div class="dropdown-content" id="class-2025">
-              <div class="board-grid">
-                <div class="board-card">
-                  <div class="board-photo">
-                    <img
-                      src="../assets/legacy/selene.webp"
-                      alt="Sarah Johnson"
-                    />
-                  </div>
-                  <div class="board-info">
-                    <h3>Yinuo Zeng (Selene)</h3>
-                    <h4>Co-Founder</h4>
-                    <p class="major">Degree: Political Science, Philosophy</p>
-                  </div>
-                </div>
-                <!-- More entries will go here -->
-              </div>
-            </div>
+          <!-- Loading indicator -->
+          <div class="loading-indicator-board" style="text-align: center; padding: 2rem;">
+            <p>Loading past board members...</p>
           </div>
-          <!-- More classes will go here -->
+          <!-- Board member dropdowns will be populated dynamically -->
         </div>
       </section>
 
@@ -101,47 +64,11 @@
           <p class="section-description">
             Memorable events and milestones from previous years
           </p>
-
-          <!-- Academic Year 2024-2025 -->
-          <div class="legacy-dropdown">
-            <button class="dropdown-toggle" data-target="events-2024-2025">
-              <span>Academic Year 2024-2025</span>
-              <svg
-                class="dropdown-arrow"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 6L8 10L12 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <div class="dropdown-content" id="events-2024-2025">
-              <div class="events-list">
-                <div class="event-item">
-                  <div class="event-date">
-                    <span class="month">MONTH</span>
-                    <span class="day">DAY</span>
-                    <span class="year">YEAR</span>
-                  </div>
-                  <div class="event-details">
-                    <h3>DUMMY TITLE</h3>
-                    <p class="event-location">DUMMY LOCATION</p>
-                    <p class="event-description">DUMMY DESCRIPTION</p>
-                  </div>
-                </div>
-                <!-- More events will go here -->
-              </div>
-            </div>
+          <!-- Loading indicator -->
+          <div class="loading-indicator-events" style="text-align: center; padding: 2rem;">
+            <p>Loading past events...</p>
           </div>
-          <!-- More academic years will go here -->
+          <!-- Event dropdowns will be populated dynamically -->
         </div>
       </section>
     </main>
@@ -153,6 +80,7 @@
     <div id="footer-container"></div>
 
     <script src="../components/addComponents.js"></script>
+    <script src="../js/legacyLoader.js"></script>
     <script src="../js/legacyDropdowns.js"></script>
   </body>
 </html>
