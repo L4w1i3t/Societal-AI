@@ -95,6 +95,17 @@ document.addEventListener("DOMContentLoaded", function () {
         minute: "2-digit",
         meridiem: true,
       },
+      // Override button text to empty strings
+      buttonText: {
+        prev: '',
+        next: '',
+        today: 'today'
+      },
+      // Add button icons using FullCalendar's icon property
+      buttonIcons: {
+        prev: 'chevron-left',
+        next: 'chevron-right'
+      },
       height: "auto", // Allow calendar to expand to fit content
       contentHeight: "auto", // Ensure the content is not cropped
       aspectRatio: 1.35, // Wider aspect ratio to fit more content
@@ -124,6 +135,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Render the calendar
     calendar.render();
+
+    // Add SVG icons to navigation buttons after a short delay to ensure DOM is ready
+    setTimeout(() => {
+      addNavigationIcons();
+    }, 0);
 
     // Set window resize handler to ensure calendar adapts to size changes
     window.addEventListener("resize", function () {
@@ -301,6 +317,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Function to add SVG icons to navigation buttons
+  function addNavigationIcons() {
+    const prevButton = document.querySelector('.fc-prev-button');
+    const nextButton = document.querySelector('.fc-next-button');
+    
+    if (prevButton) {
+      // Clear any existing content and add SVG
+      const prevSpan = prevButton.querySelector('.fc-icon');
+      if (prevSpan) {
+        prevSpan.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        `;
+      } else {
+        prevButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        `;
+      }
+    }
+    
+    if (nextButton) {
+      // Clear any existing content and add SVG
+      const nextSpan = nextButton.querySelector('.fc-icon');
+      if (nextSpan) {
+        nextSpan.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        `;
+      } else {
+        nextButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        `;
+      }
+    }
+  }
+
   // Apply dark theme styles to the calendar
   function applyDarkThemeStyles() {
     const style = document.createElement("style");
@@ -337,6 +395,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 background-color: rgba(30, 33, 48, 0.9);
                 border-color: rgba(51, 54, 68, 0.8);
                 color: #e0e0e0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .fc .fc-button-primary svg {
+                vertical-align: middle;
+            }
+            .fc-icon-chevron-left:before,
+            .fc-icon-chevron-right:before {
+                display: none !important;
             }
             .fc .fc-button-primary:not(:disabled):hover {
                 background-color: rgba(108, 158, 255, 0.7);
