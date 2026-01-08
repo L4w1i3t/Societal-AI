@@ -111,8 +111,28 @@
   background: rgba($background-color, 0.5);
 
   &.active {
-    max-height: 2000px;
+    max-height: 600px;
+    overflow-y: auto;
     transition: max-height $transition-slow ease-in;
+    
+    // Custom scrollbar styling
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba($background-color, 0.3);
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba($primary-color, 0.5);
+      border-radius: 4px;
+      
+      &:hover {
+        background: rgba($primary-color, 0.7);
+      }
+    }
   }
 }
 

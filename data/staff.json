@@ -5,7 +5,7 @@
       "name": "Xuxin Fan",
       "title": "President, Policy Chair",
       "degree": "Mathematics, Public Policy",
-      "bio": "Bio coming soon.",
+      "bio": "Hi there, my name is Fan. I'm a fourth-year student studying Public Policy and Mathematics. My hometown is Nanjing, China. My career interests lie in social entrepreneurship, working on the intersection of US-China relations and AI governance. Outside school, I'm an affiliate member at Concordia AI and a foreign affairs associate at AI Safety Asia. In my free time, I like playing billiards/pool, doing calisthenics, cycling, hiking, and drinking & making coffee, tea, and cocktails.",
       "image": "../assets/team/fan.webp"
     },
     {
@@ -13,7 +13,7 @@
       "name": "Owen Watzlavick",
       "title": "Vice President, Policy Chair",
       "degree": "Economics, Philosophy",
-      "bio": "Bio coming soon.",
+      "bio": "Owen is a second-year student at UVA studying Economics and Philosophy. He is interested in the societal implications of artificial intelligence, especially as it pertains to the future of work and how AI really affects quality of life. Owen is a founding member of Societal AI, and serves as the vice-president. In his free time, he enjoys rock climbing and spending time with friends.",
       "image": "../assets/team/owen.webp"
     },
     {
@@ -29,8 +29,16 @@
       "name": "Arthur Oker",
       "title": "Philosophy Chair, Treasurer",
       "degree": "Philosophy, Computer Science",
-      "bio": "Bio coming soon.",
+      "bio": "Hey Everyone! My name is Arthur Oker and I'm a 4th year Computer Science and Philosophy major. I'm very interested in the intersection of AI and philosophy, especially what philosophy can tell us about artifical minds & consciousness, ethical ways to implement and govern AI systems, and what concepts are at the core in achieving superintelligence.",
       "image": "../assets/team/arthur.webp"
+    },
+    {
+      "id": "sena",
+      "name": "Sena Ozkurt",
+      "title": "Graduate Outreach",
+      "degree": "Media Studies (PhD)",
+      "bio": "I am a PhD student in Media Studies, specializing in how journalists are integrating AI tools into newsrooms worldwide, focusing on ethnographic observations and interviews. My research will also explore the role of misinformation in health journalism. Originally from Istanbul, Turkey, I hold an MA in Media Studies and a BA in English, during which I spent a semester at Ghent University through the Erasmus Exchange Program. Before beginning my doctoral studies, I worked for nine years as a content marketing specialist, where I developed extensive experience in social media and public relations.",
+      "image": "../assets/team/sena.webp"
     }
   ]
 }

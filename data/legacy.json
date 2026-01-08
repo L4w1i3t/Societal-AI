@@ -12,22 +12,268 @@
           "image": "../assets/legacy/selene.webp"
         }
       ]
+    },
+
+    "class-2026": {
+      "title": "Class of 2026",
+      "members": [
+        {
+          "id": "charles",
+          "name": "Charles Melvin",
+          "title": "Co-Founder",
+          "degree": "Cognitive Science, Computer Science, Astronomy",
+          "bio": "Web Admin/Developer, Research Chair",
+          "image": "../assets/legacy/charles.webp"
+        }
+      ]
     }
   },
+
   "pastEvents": {
-    "2024-2025": {
-      "title": "Academic Year 2024-2025",
+    "2025-2026": {
+      "title": "Academic Year 2025-2026",
       "events": [
         {
-          "id": "dummy",
+          "id": "1",
+          "date": {
+            "month": "MAY",
+            "day": "10",
+            "year": "2025"
+          },
+          "title": "Summer Break",
+          "location": "Earth",
+          "description": "Have a great summer!"
+        },
+        {
+          "id": "2",
           "date": {
             "month": "AUG",
-            "day": "00",
-            "year": "2024"
+            "day": "26",
+            "year": "2025"
           },
-          "title": "DUMMY",
-          "location": "DUMMY",
-          "description": "DUMMY"
+          "title": "First Day of Classes",
+          "location": "All Across Grounds",
+          "description": "Welcome back to school!"
+        },
+        {
+          "id": "3",
+          "date": {
+            "month": "SEP",
+            "day": "02",
+            "year": "2025"
+          },
+          "title": "Interest Meeting #1",
+          "location": "Dell #2 103",
+          "description": "Welcome to Societal AI! Here we will discuss the organization, how it works, and what we do."
+        },
+        {
+          "id": "4",
+          "date": {
+            "month": "SEP",
+            "day": "03",
+            "year": "2025"
+          },
+          "title": "Interest Meeting #2",
+          "location": "New Cabell 036",
+          "description": "Welcome to Societal AI! Here we will discuss the organization, how it works, and what we do."
+        },
+        {
+          "id": "5",
+          "date": {
+            "month": "SEP",
+            "day": "29",
+            "year": "2025"
+          },
+          "title": "AI Safety, Ethics, and Society Fellowship Starts",
+          "location": "TBA",
+          "description": "The AI Safety, Ethics, and Society Fellowship begins! Fan will coordinate this initiative."
+        },
+        {
+          "id": "6",
+          "date": {
+            "month": "SEP",
+            "day": "29",
+            "year": "2025"
+          },
+          "title": "Discord Promotion Poster (Action Item)",
+          "location": "Grounds",
+          "description": "Fan: Make a poster to promote our Discord channel on Grounds."
+        },
+        {
+          "id": "7",
+          "date": {
+            "month": "OCT",
+            "day": "07",
+            "year": "2025"
+          },
+          "title": "Guest Speaker: AI 2027 with ML@UVA",
+          "location": "Virtual",
+          "description": "Virtual guest speaker event on AI 2027 with ML@UVA. Guest: Eli Lifland (https://www.linkedin.com/in/eli-lifland/)"
+        },
+        {
+          "id": "8",
+          "date": {
+            "month": "OCT",
+            "day": "08",
+            "year": "2025"
+          },
+          "title": "Anthropic Guest Speaker: Societal Impacts of AI",
+          "location": "TBA",
+          "description": "Anthropic guest speaker discussing the societal impacts of AI. Arthur will coordinate this event."
+        },
+        {
+          "id": "9",
+          "date": {
+            "month": "OCT",
+            "day": "13",
+            "year": "2025"
+          },
+          "title": "Fall Break",
+          "location": "N/A",
+          "description": "Fall break - no board meeting this week. Enjoy your time off!"
+        },
+        {
+          "id": "10",
+          "date": {
+            "month": "OCT",
+            "day": "22",
+            "year": "2025"
+          },
+          "title": "Anthropic Guest Speaker: AI Research Salon",
+          "location": "TBA",
+          "description": "Anthropic guest speaker for an AI Research Salon. Arthur will coordinate this event."
+        },
+        {
+          "id": "11",
+          "date": {
+            "month": "OCT",
+            "day": "22",
+            "year": "2025"
+          },
+          "title": "Documentary Screening: Deepfaking Sam Altman",
+          "location": "Brown 156",
+          "description": "Documentary screening of 'Deepfaking Sam Altman' at Brown Hall 156."
+        },
+        {
+          "id": "12",
+          "date": {
+            "month": "OCT",
+            "day": "27",
+            "year": "2025"
+          },
+          "title": "Marketing for Rishi's Workshop (Action Item)",
+          "location": "N/A",
+          "description": "Send out marketing emails for Rishi's upcoming workshop."
+        },
+        {
+          "id": "13",
+          "date": {
+            "month": "NOV",
+            "day": "03",
+            "year": "2025"
+          },
+          "title": "Movie Night",
+          "location": "TBA",
+          "description": "Movie night organized by Joy. Come hang out and enjoy a film!"
+        },
+        {
+          "id": "14",
+          "date": {
+            "month": "NOV",
+            "day": "03",
+            "year": "2025"
+          },
+          "title": "Fellowship Discussion Section Ends",
+          "location": "TBA",
+          "description": "End of the fellowship's discussion section. Interested people can choose to start their individual projects."
+        },
+        {
+          "id": "15",
+          "date": {
+            "month": "NOV",
+            "day": "03",
+            "year": "2025"
+          },
+          "title": "Mid-Semester Check-in",
+          "location": "TBA",
+          "description": "Casual meeting or group dinner to check in on progress and goals for the semester."
+        },
+        {
+          "id": "16",
+          "date": {
+            "month": "NOV",
+            "day": "06",
+            "year": "2025"
+          },
+          "title": "Rishi's Workshop",
+          "location": "TBA",
+          "description": "Workshop led by Rishi. Topic to be announced."
+        },
+        {
+          "id": "17",
+          "date": {
+            "month": "NOV",
+            "day": "10",
+            "year": "2025"
+          },
+          "title": "Daisy's Workshop",
+          "location": "TBA",
+          "description": "Workshop led by Daisy. Topic to be announced."
+        },
+        {
+          "id": "18",
+          "date": {
+            "month": "NOV",
+            "day": "10",
+            "year": "2025"
+          },
+          "title": "Mixer Discussion",
+          "location": "TBA",
+          "description": "Mixer discussion organized by Sena."
+        },
+        {
+          "id": "19",
+          "date": {
+            "month": "NOV",
+            "day": "17",
+            "year": "2025"
+          },
+          "title": "Guest Speaker: Charlie",
+          "location": "TBA",
+          "description": "Guest speaker talk/workshop by Charlie. Potential topics: AI & law, AI & math, AI & science, or Mechanistic Interpretability."
+        },
+        {
+          "id": "20",
+          "date": {
+            "month": "NOV",
+            "day": "24",
+            "year": "2025"
+          },
+          "title": "Thanksgiving Break",
+          "location": "N/A",
+          "description": "Thanksgiving break - no board meeting this week. Happy Thanksgiving!"
+        },
+        {
+          "id": "21",
+          "date": {
+            "month": "DEC",
+            "day": "01",
+            "year": "2025"
+          },
+          "title": "Group Study Session",
+          "location": "Rotunda (suggested)",
+          "description": "Group study session organized by Iman. The Rotunda can be a good place for this."
+        },
+        {
+          "id": "22",
+          "date": {
+            "month": "DEC",
+            "day": "15",
+            "year": "2025"
+          },
+          "title": "Semester Debrief + Group Dinner",
+          "location": "TBA",
+          "description": "End of semester debrief and group dinner! Let's celebrate our accomplishments and reflect on the semester. (Before Dec 19th)"
         }
       ]
     }
