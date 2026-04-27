@@ -3061,5 +3061,150 @@ body.modal-open {
     font-size: 1rem;
   }
 }
+.fellowship-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+}
+
+.fellowship-overview {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+.fellowship-overview p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+.fellowship-overview p:last-child {
+  margin-bottom: 0;
+}
+
+.fellowship-outcomes {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 3rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(248, 250, 252, 0.1);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+}
+.fellowship-outcomes h2 {
+  font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.3rem;
+  color: #f8fafc;
+  margin-bottom: 2rem;
+}
+.fellowship-outcomes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+.fellowship-outcomes ul li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+.fellowship-outcomes ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+}
+.fellowship-outcomes .fellowship-note {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-style: italic;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(248, 250, 252, 0.1);
+}
+
+.fellowship-resources {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.fellowship-resources h2 {
+  font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.resource-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resource-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 3rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(248, 250, 252, 0.1);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: inherit;
+}
+.resource-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+.resource-card--cta {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+}
+.resource-card--cta .resource-icon {
+  color: #06b6d4;
+}
+.resource-card--cta:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.08) 100%);
+}
+
+.resource-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: rgba(99, 102, 241, 0.1);
+  color: #818cf8;
+}
+
+.resource-info h3 {
+  font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #f8fafc;
+}
+.resource-info p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .fellowship-section {
+    padding: 3rem 0;
+  }
+  .fellowship-outcomes {
+    padding: 2rem;
+  }
+  .resource-card {
+    padding: 1.5rem;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

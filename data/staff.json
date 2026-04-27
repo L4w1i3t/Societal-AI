@@ -19,7 +19,7 @@
     {
       "id": "charles",
       "name": "Charles Melvin",
-      "title": "Web Admin/Developer, Research Chair",
+      "title": "Web Admin/Developer, R&D",
       "degree": "Cognitive Science, Computer Science, Astronomy",
       "bio": "Bio coming soon.",
       "image": "../assets/team/charles.webp"
@@ -39,6 +39,62 @@
       "degree": "Media Studies (PhD)",
       "bio": "I am a PhD student in Media Studies, specializing in how journalists are integrating AI tools into newsrooms worldwide, focusing on ethnographic observations and interviews. My research will also explore the role of misinformation in health journalism. Originally from Istanbul, Turkey, I hold an MA in Media Studies and a BA in English, during which I spent a semester at Ghent University through the Erasmus Exchange Program. Before beginning my doctoral studies, I worked for nine years as a content marketing specialist, where I developed extensive experience in social media and public relations.",
       "image": "../assets/team/sena.webp"
+    },
+    {
+      "id": "daisy",
+      "name": "Daisy",
+      "title": "Board Member",
+      "degree": "TBA",
+      "bio": "Bio coming soon.",
+      "image": ""
+    },
+    {
+      "id": "rishi",
+      "name": "Rishi",
+      "title": "Board Member",
+      "degree": "TBA",
+      "bio": "Bio coming soon.",
+      "image": ""
+    },
+    {
+      "id": "joy",
+      "name": "Joy",
+      "title": "Board Member",
+      "degree": "TBA",
+      "bio": "Bio coming soon.",
+      "image": ""
+    },
+    {
+      "id": "iman",
+      "name": "Iman",
+      "title": "Board Member",
+      "degree": "TBA",
+      "bio": "Bio coming soon.",
+      "image": ""
+    },
+    {
+      "id": "rebekah",
+      "name": "Rebekah",
+      "title": "Board Member",
+      "degree": "TBA",
+      "bio": "Bio coming soon.",
+      "image": ""
+    },
+    {
+      "id": "patrick",
+      "name": "Patrick",
+      "title": "Board Member",
+      "degree": "TBA",
+      "bio": "Bio coming soon.",
+      "image": ""
+    },
+    {
+      "id": "heather",
+      "name": "Heather",
+      "title": "Board Member",
+      "degree": "TBA",
+      "bio": "Bio coming soon.",
+      "image": ""
     }
   ]
 }

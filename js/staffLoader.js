@@ -31,10 +31,14 @@ class StaffLoader {
    * @returns {string} HTML string for staff card
    */
   createStaffCard(member) {
+    // Placeholder SVG for members without a photo
+    const placeholderSvg = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect fill='%231e293b' width='200' height='200'/%3E%3Ccircle cx='100' cy='75' r='35' fill='%23334155'/%3E%3Cellipse cx='100' cy='155' rx='55' ry='40' fill='%23334155'/%3E%3C/svg%3E`;
+    const imgSrc = member.image || placeholderSvg;
+
     return `
       <div class="staff-card" data-staff-id="${member.id}">
         <div class="staff-photo">
-          <img src="${member.image}" alt="${member.name}" />
+          <img src="${imgSrc}" alt="${member.name}" />
         </div>
         <div class="staff-info">
           <h3>${member.name}</h3>

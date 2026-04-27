@@ -133,6 +133,13 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         link.classList.add("active");
       }
+      // Fellowship page
+      else if (
+        currentPath.includes("fellowship.html") &&
+        href.includes("fellowship.html")
+      ) {
+        link.classList.add("active");
+      }
       // Contact page
       else if (
         currentPath.includes("contact.html") &&
