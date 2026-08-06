@@ -18,12 +18,36 @@
       "title": "Class of 2026",
       "members": [
         {
+          "id": "fan",
+          "name": "Xuxin Fan",
+          "title": "President, Policy Chair",
+          "degree": "Mathematics, Public Policy",
+          "bio": "Hi there, my name is Fan. I'm a fourth-year student studying Public Policy and Mathematics. My hometown is Nanjing, China. My career interests lie in social entrepreneurship, working on the intersection of US-China relations and AI governance. Outside school, I'm an affiliate member at Concordia AI and a foreign affairs associate at AI Safety Asia. In my free time, I like playing billiards/pool, doing calisthenics, cycling, hiking, and drinking & making coffee, tea, and cocktails.",
+          "image": "../assets/team/fan.webp"
+        },
+        {
           "id": "charles",
           "name": "Charles Melvin",
           "title": "Web Admin/Developer, Research Chair",
           "degree": "Cognitive Science, Computer Science, Astronomy",
           "bio": "Web Admin/Developer, Research Chair",
           "image": "../assets/legacy/charles.webp"
+        },
+        {
+          "id": "arthur",
+          "name": "Arthur Oker",
+          "title": "Philosophy Chair, Treasurer",
+          "degree": "Philosophy, Computer Science",
+          "bio": "Hey Everyone! My name is Arthur Oker and I'm a 4th year Computer Science and Philosophy major. I'm very interested in the intersection of AI and philosophy, especially what philosophy can tell us about artificial minds & consciousness, ethical ways to implement and govern AI systems, and what concepts are at the core in achieving superintelligence.",
+          "image": "../assets/team/arthur.webp"
+        },
+        {
+          "id": "iman",
+          "name": "Iman Mohamed",
+          "title": "Board Member",
+          "degree": "TBA",
+          "bio": "Bio coming soon.",
+          "image": ""
         }
       ]
     }

@@ -1,11 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - Societal AI at UVA</title>
+    <title>Get Involved - Societal AI at UVA</title>
 
-    <!-- Security Headers (Note: X-Frame-Options and frame-ancestors should be set via HTTP headers in production) -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta
@@ -17,7 +16,6 @@
       content="geolocation=(), microphone=(), camera=()"
     />
 
-    <!-- Content Security Policy -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
@@ -27,114 +25,116 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Load security utilities first -->
     <script src="../js/security.js"></script>
-    <!-- Load versioning system -->
     <script src="../js/version.js"></script>
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
-    <!-- Header will be dynamically inserted here -->
     <div id="header-container"></div>
 
     <main>
       <section class="page-header">
         <div class="container">
-          <h1>Contact Us</h1>
-          <p>Reach out to our team with questions, suggestions, or feedback</p>
+          <h1>Get Involved</h1>
+          <p>Join our community and connect with our team</p>
         </div>
       </section>
 
-      <section class="contact-section">
+      <!-- Join the Team -->
+      <section class="join-team-section">
         <div class="container">
-          <div class="contact-content">
-            <div class="leadership-contacts">
-              <h2>Leadership Team</h2>
+          <div class="about-section-header">
+            <h2>Join the Team</h2>
+            <p>Open roles and programs &mdash; all majors and backgrounds welcome</p>
+          </div>
+          <div class="join-team-grid">
 
-              <div class="contact-card">
-                <div class="contact-photo">
-                  <img src="../assets/team/fan.webp" alt="Xuxin Fan" />
-                </div>
-                <div class="contact-info">
-                  <h3>Xuxin Fan</h3>
-                  <h4>President</h4>
-                  <div class="contact-method">
-                    <a href="mailto:wrc5gs@virginia.edu">wrc5gs@virginia.edu</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="contact-photo">
-                  <img src="../assets/team/owen.webp" alt="Owen Watzlavick" />
-                </div>
-                <div class="contact-info">
-                  <h3>Owen Watzlavick</h3>
-                  <h4>Vice President</h4>
-                  <div class="contact-method">
-                    <a href="mailto:sbx7gq@virginia.edu">sbx7gq@virginia.edu</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="contact-photo">
-                  <img src="../assets/team/charles.webp" alt="Charles Melvin" />
-                </div>
-                <div class="contact-info">
-                  <h3>Charles Melvin</h3>
-                  <h4>Web Admin</h4>
-                  <div class="contact-method">
-                    <a href="mailto:jgm6jy@virginia.edu">jgm6jy@virginia.edu</a>
-                  </div>
-                  <div class="contact-method">
-                    <span class="contact-icon">
-                      <img
-                        src="../assets/gui/discord-icon.svg"
-                        alt="Discord"
-                        class="discord-mini-icon"
-                      />
-                    </span>
-                    <span>@L4w1i3t</span>
-                  </div>
-                </div>
-              </div>
+            <div class="join-team-card join-team-card--featured">
+              <div class="join-team-card-label">Fellowship</div>
+              <h3>AI &amp; Society Fellowship</h3>
+              <p>A discussion-based program on AI Safety, Ethics, and Governance. ~2 hours/week, no technical background required. Applications open each semester.</p>
+              <a href="fellowship.html" class="btn btn-primary-modern btn-sm">Learn More &rarr;</a>
             </div>
 
-            <div class="general-contact">
-              <h2>General Inquiries</h2>
-              <div class="general-card">
-                <div class="general-icon">
-                  <img
-                    src="../assets/gui/email-icon.svg"
-                    alt="Email"
-                    class="email-icon"
-                  />
-                </div>
-                <div class="general-info">
-                  <h3>Email Us</h3>
-                  <p>For general questions and information:</p>
-                  <a
-                    href="mailto:SAIatUVABoard@gmail.com"
-                    class="highlight-email"
-                    >SAIatUVABoard@gmail.com</a
-                  >
-                </div>
-              </div>
+            <div class="join-team-card">
+              <div class="join-team-card-label">Board &mdash; Open</div>
+              <h3>Treasurer</h3>
+              <p>Manage organizational finances, process reimbursements, and support event budgeting.</p>
+              <a href="mailto:saiatuvaboard@gmail.com" class="btn btn-outline-modern btn-sm">Apply &rarr;</a>
             </div>
+
+            <div class="join-team-card">
+              <div class="join-team-card-label">Board &mdash; Open</div>
+              <h3>Publicity Lead</h3>
+              <p>Drive our social media presence and promote events across the UVA community.</p>
+              <a href="mailto:saiatuvaboard@gmail.com" class="btn btn-outline-modern btn-sm">Apply &rarr;</a>
+            </div>
+
+            <div class="join-team-card">
+              <div class="join-team-card-label">Board &mdash; Open</div>
+              <h3>Field Organizer</h3>
+              <p>Coordinate campus outreach and build connections with partner organizations.</p>
+              <a href="mailto:saiatuvaboard@gmail.com" class="btn btn-outline-modern btn-sm">Apply &rarr;</a>
+            </div>
+
+            <div class="join-team-card">
+              <div class="join-team-card-label">Board &mdash; Open</div>
+              <h3>Research Fellow</h3>
+              <p>Contribute original research and writing to our newsletter and workshop materials.</p>
+              <a href="mailto:saiatuvaboard@gmail.com" class="btn btn-outline-modern btn-sm">Apply &rarr;</a>
+            </div>
+
+            <div class="join-team-card">
+              <div class="join-team-card-label">Board &mdash; Open</div>
+              <h3>Workshop Fellow</h3>
+              <p>Help design and facilitate hands-on workshops and educational events.</p>
+              <a href="mailto:saiatuvaboard@gmail.com" class="btn btn-outline-modern btn-sm">Apply &rarr;</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-simple-section">
+        <div class="container">
+          <div class="contact-simple">
+
+            <div class="contact-simple-group">
+              <h2>Join the Community</h2>
+              <ul class="contact-links-list">
+                <li>
+                  <a href="https://groupme.com/join_group/103135952/Hm23l608" target="_blank" rel="noopener noreferrer">GroupMe</a>
+                  — join a 250+ member community for updates and casual conversation
+                </li>
+                <li>
+                  <a href="https://lists.virginia.edu/sympa/subscribe/sai_uva" target="_blank" rel="noopener noreferrer">Mailing List</a>
+                  — important announcements delivered to your inbox
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-simple-group">
+              <h2>Get in Touch</h2>
+              <p>
+                Owen Watzlavick, President &mdash;
+                <a href="mailto:sbx7gq@virginia.edu">sbx7gq@virginia.edu</a>
+              </p>
+              <p>
+                General inquiries &mdash;
+                <a href="mailto:saiatuvaboard@gmail.com">saiatuvaboard@gmail.com</a>
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Mobile menu overlay -->
     <div class="mobile-menu-overlay"></div>
-
-    <!-- Footer will be dynamically inserted here -->
     <div id="footer-container"></div>
 
     <script src="../components/addComponents.js"></script>
