@@ -1,11 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events - Societal AI at UVA</title>
 
-    <!-- Security Headers (Note: X-Frame-Options and frame-ancestors should be set via HTTP headers in production) -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta
@@ -17,116 +16,487 @@
       content="geolocation=(), microphone=(), camera=()"
     />
 
-    <!-- Content Security Policy - Updated to allow FullCalendar CDN -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
     />
 
     <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <!-- Preload critical assets -->
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"
-      as="script"
-    />
 
-    <!-- Load security utilities first -->
     <script src="../js/security.js"></script>
-    <!-- Load versioning system -->
     <script src="../js/version.js"></script>
     <link rel="stylesheet" href="../css/main.css" />
-    <!-- FullCalendar CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
-    />
-    <style>
-      /* Inline critical CSS to prevent layout shifts */
-      .calendar-container {
-        min-height: 650px;
-        height: auto;
-        max-width: 100%;
-        position: relative;
-      }
-      #calendar {
-        min-height: 600px;
-        position: relative;
-        height: auto !important;
-      }
-      #event-list {
-        min-height: 300px;
-      }
-
-      /* Fix for FullCalendar view getting cut off */
-      .fc-view-harness {
-        height: auto !important;
-        min-height: 500px;
-      }
-      .fc-scrollgrid-sync-table {
-        height: auto !important;
-      }
-    </style>
   </head>
   <body>
-    <!-- Header will be dynamically inserted here -->
     <div id="header-container"></div>
 
     <main>
       <section class="page-header">
         <div class="container">
-          <h1>Events Calendar</h1>
-          <p>Find our upcoming events, meetings, and activities</p>
+          <h1>Events</h1>
+          <p>Upcoming events, meetings, and past activities</p>
         </div>
       </section>
 
-      <section class="calendar-section">
+      <!-- Upcoming Events -->
+      <section class="events-upcoming-section">
         <div class="container">
-          <div class="calendar-container loading">
-            <div id="calendar"></div>
-          </div>
-
-          <div class="upcoming-events">
+          <div class="about-section-header">
             <h2>Upcoming Events</h2>
-            <div id="event-list">
-              <!-- Event skeletons will be added by JS on page load -->
+            <p>Fall 2026 semester schedule coming soon</p>
+          </div>
+          <div class="events-upcoming-list">
+            <div class="upcoming-event-item">
+              <div class="event-date">
+                <span class="month">TBA</span>
+                <span class="day">—</span>
+              </div>
+              <div class="event-details">
+                <h3>Interest Meeting</h3>
+                <p class="event-location">Location TBA</p>
+                <p class="event-description">Come learn about Societal AI at UVA and how to get involved.</p>
+              </div>
+            </div>
+            <div class="upcoming-event-item">
+              <div class="event-date">
+                <span class="month">TBA</span>
+                <span class="day">—</span>
+              </div>
+              <div class="event-details">
+                <h3>AI &amp; Society Fellowship — Cohort 3</h3>
+                <p class="event-location">Location TBA</p>
+                <p class="event-description">Applications open for our flagship discussion-based fellowship on AI safety, ethics, and governance.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div id="event-modal" class="modal">
-        <div class="modal-content">
-          <span class="close-modal">&times;</span>
-          <h2 id="modal-title"></h2>
-          <p id="modal-date"></p>
-          <p id="modal-time"></p>
-          <p id="modal-location"></p>
-          <div id="modal-description"></div>
+      <!-- Highlighted Events -->
+      <section class="events-highlighted-section">
+        <div class="container">
+          <div class="about-section-header">
+            <h2>Highlighted Events</h2>
+            <p>A closer look at some of our biggest moments</p>
+          </div>
+
+          <!-- Governing Artificial Intelligence -->
+          <div class="marquee-event-card"
+            data-gallery-container
+            data-photos="../assets/events/governing-ai-apr-2026/kelts-lecture.webp"
+            data-alts="Steven Kelts lecturing at Monroe Hall">
+            <div class="marquee-photos">
+              <div class="marquee-main-photo">
+                <img src="../assets/events/governing-ai-apr-2026/kelts-lecture.webp"
+                  alt="Steven Kelts lecturing at Monroe Hall"
+                  data-gallery-index="0" />
+              </div>
+            </div>
+            <div class="marquee-details">
+              <div class="gallery-event-meta">
+                <span class="gallery-event-date">APR 1, 2026</span>
+                <span class="gallery-event-tag">Guest Speaker</span>
+              </div>
+              <h3>Governing Artificial Intelligence</h3>
+              <p>Steven Kelts, Princeton Lecturer &amp; AI Ethics Expert, on establishing AI ethics before the technology becomes uncontrollable. With ML@UVA &amp; Blue Ridge Center.</p>
+            </div>
+          </div>
+
+          <!-- AGI Scenario Planning -->
+          <div class="marquee-event-card"
+            data-gallery-container
+            data-photos="../assets/events/agi-scenario-planning/IMG_4368.JPG|../assets/events/agi-scenario-planning/IMG_4369.JPG|../assets/events/agi-scenario-planning/IMG_4370.JPG|../assets/events/agi-scenario-planning/IMG_4371.JPG|../assets/events/agi-scenario-planning/IMG_4373.JPG|../assets/events/agi-scenario-planning/IMG_4374.JPG|../assets/events/agi-scenario-planning/IMG_4375.JPG"
+            data-alts="Students working at tables|Workshop in the Capital One Hub|Small group working session|Students collaborating with sticky notes|Full group discussion|Full group discussion wide|Group photo at the Transformative AI Scenario Planning Workshop">
+            <div class="marquee-photos">
+              <div class="marquee-main-photo">
+                <img src="../assets/events/agi-scenario-planning/IMG_4375.JPG"
+                  alt="Group photo at the Transformative AI Scenario Planning Workshop"
+                  data-gallery-index="6" />
+              </div>
+              <div class="marquee-thumb-row">
+                <div class="marquee-thumb">
+                  <img src="../assets/events/agi-scenario-planning/IMG_4373.JPG"
+                    alt="Full group discussion" data-gallery-index="4" />
+                </div>
+                <div class="marquee-thumb">
+                  <img src="../assets/events/agi-scenario-planning/IMG_4371.JPG"
+                    alt="Students collaborating" data-gallery-index="3" />
+                </div>
+              </div>
+            </div>
+            <div class="marquee-details">
+              <div class="gallery-event-meta">
+                <span class="gallery-event-date">MAR 28, 2026</span>
+                <span class="gallery-event-tag">Workshop</span>
+              </div>
+              <h3>What Happens When AI Can Do Everything?</h3>
+              <p>AGI scenario planning workshop with EconTAI.</p>
+              <button class="gallery-trigger btn-see-photos"
+                data-photos="../assets/events/agi-scenario-planning/IMG_4368.JPG|../assets/events/agi-scenario-planning/IMG_4369.JPG|../assets/events/agi-scenario-planning/IMG_4370.JPG|../assets/events/agi-scenario-planning/IMG_4371.JPG|../assets/events/agi-scenario-planning/IMG_4373.JPG|../assets/events/agi-scenario-planning/IMG_4374.JPG|../assets/events/agi-scenario-planning/IMG_4375.JPG"
+                data-alts="Students working at tables|Workshop in the Capital One Hub|Small group working session|Students collaborating with sticky notes|Full group discussion|Full group discussion wide|Group photo">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                See all 7 photos
+              </button>
+            </div>
+          </div>
+
+          <!-- AI Mixer -->
+          <div class="marquee-event-card"
+            data-gallery-container
+            data-photos="../assets/events/ai-mixer-mar-2026/PXL_20260311.jpg|../assets/events/ai-mixer-mar-2026/IMG_0800.jpg|../assets/events/ai-mixer-mar-2026/IMG_0797.jpg"
+            data-alts="AI Mixer wide view|AI Mixer audience and panelists|AI Mixer panel close-up">
+            <div class="marquee-photos">
+              <div class="marquee-main-photo">
+                <img src="../assets/events/ai-mixer-mar-2026/PXL_20260311.jpg"
+                  alt="AI Mixer panel discussion wide view"
+                  data-gallery-index="0" />
+              </div>
+              <div class="marquee-thumb-row">
+                <div class="marquee-thumb">
+                  <img src="../assets/events/ai-mixer-mar-2026/IMG_0800.jpg"
+                    alt="AI Mixer audience" data-gallery-index="1" />
+                </div>
+                <div class="marquee-thumb">
+                  <img src="../assets/events/ai-mixer-mar-2026/IMG_0797.jpg"
+                    alt="AI Mixer panel close-up" data-gallery-index="2" />
+                </div>
+              </div>
+            </div>
+            <div class="marquee-details">
+              <div class="gallery-event-meta">
+                <span class="gallery-event-date">MAR 11, 2026</span>
+                <span class="gallery-event-tag">Mixer</span>
+              </div>
+              <h3>AI Mixer: Conversations on AI, Society &amp; Culture</h3>
+              <p>UVA students and faculty meet over dinner for conversations on AI and society. Supported by The Jefferson Trust &amp; UVA Alumni.</p>
+            </div>
+          </div>
+
+          <!-- Eli Lifland -->
+          <div class="marquee-event-card"
+            data-gallery-container
+            data-photos="../assets/events/eli-lifland-oct-2025/eli-lifland-event-photos.jpg"
+            data-alts="Packed lecture hall for Eli Lifland's AI 2027 talk">
+            <div class="marquee-photos">
+              <div class="marquee-main-photo">
+                <img src="../assets/events/eli-lifland-oct-2025/eli-lifland-event-photos.jpg"
+                  alt="Packed lecture hall for Eli Lifland's AI 2027 talk"
+                  data-gallery-index="0" />
+              </div>
+            </div>
+            <div class="marquee-details">
+              <div class="gallery-event-meta">
+                <span class="gallery-event-date">OCT 7, 2025</span>
+                <span class="gallery-event-tag">Guest Speaker</span>
+              </div>
+              <h3>Eli Lifland &mdash; Co-Author of AI 2027</h3>
+              <p>AI 2027, current AI safety projects, and advice for contributing to the field. Presented with AI Safety Initiative.</p>
+            </div>
+          </div>
+
         </div>
-      </div>
+      </section>
+
+      <!-- Past Events — Societal AI era -->
+      <section class="events-gallery-section">
+        <div class="container">
+          <div class="about-section-header">
+            <h2>Past Events</h2>
+            <p>Workshops, speakers, and community gatherings</p>
+          </div>
+
+          <div class="event-flyer-grid">
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/digital-connections-apr-2026.jpeg" alt="Digital Connections event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">APR 3, 2026</span>
+                  <span class="gallery-event-tag">Social</span>
+                </div>
+                <h3>Digital Connections</h3>
+                <p>Share your thoughts on AI companions. With Mood Psychology.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/governing-ai-apr-2026.jpg" alt="Governing Artificial Intelligence event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">APR 1, 2026</span>
+                  <span class="gallery-event-tag">Guest Speaker</span>
+                </div>
+                <h3>Governing Artificial Intelligence</h3>
+                <p>Steven Kelts, Princeton Lecturer &amp; AI Ethics Expert. With ML@UVA &amp; Blue Ridge Center.</p>
+                <button class="gallery-trigger btn-see-photos"
+                  data-photos="../assets/events/governing-ai-apr-2026/kelts-lecture.webp"
+                  data-alts="Steven Kelts lecturing at Monroe Hall">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                  See Photo
+                </button>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/agi-future-mar-2026.png" alt="What Happens When AI Can Do Everything event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">MAR 28, 2026</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>What Happens When AI Can Do Everything?</h3>
+                <p>AGI scenario planning with EconTAI.</p>
+                <button class="gallery-trigger btn-see-photos"
+                  data-photos="../assets/events/agi-scenario-planning/IMG_4368.JPG|../assets/events/agi-scenario-planning/IMG_4369.JPG|../assets/events/agi-scenario-planning/IMG_4370.JPG|../assets/events/agi-scenario-planning/IMG_4371.JPG|../assets/events/agi-scenario-planning/IMG_4373.JPG|../assets/events/agi-scenario-planning/IMG_4374.JPG|../assets/events/agi-scenario-planning/IMG_4375.JPG"
+                  data-alts="Students working at tables|Workshop in the Capital One Hub|Small group working session|Students collaborating with sticky notes|Full group discussion|Full group discussion wide|Group photo at the Transformative AI Scenario Planning Workshop">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                  See Photos (7)
+                </button>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/ai-mixer-mar-2026.png" alt="AI Mixer event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">MAR 11, 2026</span>
+                  <span class="gallery-event-tag">Mixer</span>
+                </div>
+                <h3>AI Mixer: Conversations on AI, Society &amp; Culture</h3>
+                <p>UVA students and faculty meet over dinner. Supported by The Jefferson Trust &amp; UVA Alumni.</p>
+                <button class="gallery-trigger btn-see-photos"
+                  data-photos="../assets/events/ai-mixer-mar-2026/PXL_20260311.jpg|../assets/events/ai-mixer-mar-2026/IMG_0800.jpg|../assets/events/ai-mixer-mar-2026/IMG_0797.jpg"
+                  data-alts="AI Mixer panel discussion wide view|AI Mixer audience and panelists|AI Mixer panel close-up">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                  See Photos (3)
+                </button>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/ai-surveillance-feb-2026.jpg" alt="AI and Surveillance event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">FEB 19, 2026</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>AI and Surveillance</h3>
+                <p>From 1984 to The Hunger Games: AI&rsquo;s new era of data-driven monitoring.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/copyright-ai-nov-2025.png" alt="Copyright and AI event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">NOV 12, 2025</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>Curious About Copyright &amp; AI?</h3>
+                <p>History of copyright and new challenges brought by AI. Pizza provided.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/not-artificial-nov-2025.png" alt="The Not So Artificial Part of AI event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">NOV 6, 2025</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>The Not So Artificial Part of AI</h3>
+                <p>The humans behind AI, neocolonialism, and human rights.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/DeepfakingSamAltman_27x40-KeyArt_WebReady.webp" alt="Deepfaking Sam Altman documentary screening flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">OCT 22, 2025</span>
+                  <span class="gallery-event-tag">Screening</span>
+                </div>
+                <h3>Documentary Screening: Deepfaking Sam Altman</h3>
+                <p>Documentary screening of the 2025 film.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/eli-lifland-oct-2025.png" alt="Eli Lifland AI 2027 event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">OCT 7, 2025</span>
+                  <span class="gallery-event-tag">Guest Speaker</span>
+                </div>
+                <h3>Eli Lifland &mdash; Co-Author of AI 2027</h3>
+                <p>AI 2027, current AI safety projects, and advice for contributing. Presented with AI Safety Initiative.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/interest-meeting-fall-2025.png" alt="Societal AI Interest Meeting Fall 2025 flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">SEP 2–3, 2025</span>
+                  <span class="gallery-event-tag">Interest Meeting</span>
+                </div>
+                <h3>Fall 2025 Interest Meetings</h3>
+                <p>AI literacy, ethics, safety, and policy.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ATIH Era -->
+      <section class="events-atih-section">
+        <div class="container">
+          <div class="atih-era-header">
+            <div class="atih-era-label">Before we were Societal AI</div>
+            <h2>All Tech Is Human at UVA &middot; 2024–2025</h2>
+            <p>
+              These events took place when this organization operated as the UVA
+              chapter of <em>All Tech Is Human</em>, prior to our renaming as
+              Societal AI at UVA.
+            </p>
+          </div>
+
+          <div class="event-flyer-grid">
+
+            <div class="event-flyer-card gallery-event-card--atih">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/atih-cognition-machines-apr-2025.png" alt="Cognition in Machines event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">APR 23, 2025</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>Cognition in Machines: Does it Exist?</h3>
+                <p>Memory, personality, and AI ethics. Explore how machines "remember" and what that means for us.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card gallery-event-card--atih">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/atih-chat-real-apr-2025.jpg" alt="Chat Is This Real event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">APR 17, 2025</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>Chat, Is This Real?</h3>
+                <p>How AI is reshaping truth in media. Spot what&rsquo;s real vs. AI-generated.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card gallery-event-card--atih">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/atih-intl-relations-apr-2025.png" alt="AI and International Relations event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">APR 2, 2025</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>AI &amp; International Relations</h3>
+                <p>AI&rsquo;s role in geopolitics and national security.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card gallery-event-card--atih">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/atih-better-life-mar-2025.jpg" alt="Can AI Tools Help Us Live a Better Life event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">MAR 28, 2025</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>Can AI Tools Help Us Live a Better Life?</h3>
+                <p>Practical AI for everyday use and well-being.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card gallery-event-card--atih">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/atih-roundtable-feb-2025.jpg" alt="AI Roundtable event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">FEB 14, 2025</span>
+                  <span class="gallery-event-tag">Roundtable</span>
+                </div>
+                <h3>AI Roundtable: Tools, Tips &amp; Transformations</h3>
+                <p>Incorporating AI into daily life, prompt engineering, DeepSeek impact.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card gallery-event-card--atih">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/atih-education-workshop-nov-2024.jpg" alt="AI and Education Workshop event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">NOV 21, 2024</span>
+                  <span class="gallery-event-tag">Workshop</span>
+                </div>
+                <h3>AI &amp; Education Workshop</h3>
+                <p>Basics of AI in education, casual roundtable discussion.</p>
+              </div>
+            </div>
+
+            <div class="event-flyer-card gallery-event-card--atih">
+              <div class="event-flyer-thumb">
+                <img src="../assets/events/atih-rose-guingrich-nov-2024.jpg" alt="UNLOCK Human-AI Interaction event flyer" />
+              </div>
+              <div class="event-flyer-details">
+                <div class="gallery-event-meta">
+                  <span class="gallery-event-date">NOV 19, 2024</span>
+                  <span class="gallery-event-tag">Guest Speaker</span>
+                </div>
+                <h3>UNLOCK the Research Behind Human-AI Interaction</h3>
+                <p>Rose E. Guingrich, PhD candidate at Princeton in Psychology &amp; Social Policy.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Mobile menu overlay -->
     <div class="mobile-menu-overlay"></div>
-
-    <!-- Footer will be dynamically inserted here -->
     <div id="footer-container"></div>
 
-    <!-- FullCalendar and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
     <script src="../components/addComponents.js"></script>
-    <script src="../components/calendar.js"></script>
+    <script src="../js/flyerLightbox.js"></script>
   </body>
 </html>

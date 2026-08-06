@@ -112,10 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         link.classList.add("active");
       }
-      // Staff/Team page
+      // About page
       else if (
-        currentPath.includes("staff.html") &&
-        href.includes("staff.html")
+        currentPath.includes("about.html") &&
+        href.includes("about.html")
       ) {
         link.classList.add("active");
       }
@@ -123,13 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
       else if (
         currentPath.includes("calendar.html") &&
         href.includes("calendar.html")
-      ) {
-        link.classList.add("active");
-      }
-      // Legacy page
-      else if (
-        currentPath.includes("legacy.html") &&
-        href.includes("legacy.html")
       ) {
         link.classList.add("active");
       }
