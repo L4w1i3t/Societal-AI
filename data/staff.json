@@ -6,11 +6,11 @@
       "title": "President",
       "degree": "Economics, Philosophy",
       "bio": "Owen is a third-year student at UVA studying Economics and Philosophy. He is interested in the societal implications of artificial intelligence, especially as it pertains to the future of work and how AI really affects quality of life. Owen is a founding member of Societal AI, and serves as the president. In his free time, he enjoys rock climbing and spending time with friends.",
-      "image": "../assets/team/owen.webp",
+      "image": "../assets/team/owen.png",
       "links": {
         "linkedin": "https://www.linkedin.com/in/owen-watzlavick/",
-        "calendly": null,
-        "email": null
+        "calendly": "https://calendly.com/owen-watzlavick/30min?month=2026-08",
+        "email": "sbx7gq@virginia.edu"
       }
     },
     {
@@ -19,9 +19,9 @@
       "title": "Vice President",
       "degree": "TBA",
       "bio": "Bio coming soon.",
-      "image": "",
+      "image": "../assets/team/joy.jpg",
       "links": {
-        "linkedin": null,
+        "linkedin": "http://linkedin.com/in/jiayi-li-102a3b302",
         "calendly": null,
         "email": "gus4kp@virginia.edu"
       }
@@ -32,9 +32,9 @@
       "title": "Graduate Liaison",
       "degree": "Media Studies (PhD)",
       "bio": "I am a PhD student in Media Studies, specializing in how journalists are integrating AI tools into newsrooms worldwide, focusing on ethnographic observations and interviews. My research will also explore the role of misinformation in health journalism. Originally from Istanbul, Turkey, I hold an MA in Media Studies and a BA in English, during which I spent a semester at Ghent University through the Erasmus Exchange Program. Before beginning my doctoral studies, I worked for nine years as a content marketing specialist, where I developed extensive experience in social media and public relations.",
-      "image": "../assets/team/sena.webp",
+      "image": "../assets/team/sena.jpg",
       "links": {
-        "linkedin": null,
+        "linkedin": "https://www.linkedin.com/in/senaozkurt/",
         "calendly": null,
         "email": null
       }
@@ -45,9 +45,9 @@
       "title": "Fellowship Lead",
       "degree": "TBA",
       "bio": "Bio coming soon.",
-      "image": "",
+      "image": "../assets/team/heather.jpg",
       "links": {
-        "linkedin": null,
+        "linkedin": "https://www.linkedin.com/in/heather-tang-267b932a9/",
         "calendly": null,
         "email": "uww9ws@virginia.edu"
       }
@@ -58,9 +58,9 @@
       "title": "Editor in Chief & Workshop Lead",
       "degree": "TBA",
       "bio": "Bio coming soon.",
-      "image": "",
+      "image": "../assets/team/rishi.jpg",
       "links": {
-        "linkedin": null,
+        "linkedin": "https://www.linkedin.com/in/rishi-chandra12/",
         "calendly": null,
         "email": null
       }
@@ -71,9 +71,9 @@
       "title": "Advocacy Lead",
       "degree": "TBA",
       "bio": "Bio coming soon.",
-      "image": "",
+      "image": "../assets/team/ricardo.png",
       "links": {
-        "linkedin": null,
+        "linkedin": "https://www.linkedin.com/in/ricardobruinton/",
         "calendly": null,
         "email": null
       }
