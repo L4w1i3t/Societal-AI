@@ -1,4 +1,5 @@
 # Societal AI at UVA
+> Website: https://saiuva.com
 
 Societal AI (SAI) is the University of Virginia's student organization focused on AI safety, AI ethics, and AI governance. It is the primary AI safety club at UVA. The organization was formerly known as "All Tech Is Human at UVA" before renaming to Societal AI at UVA.
 

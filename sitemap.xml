@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- UPDATE: replace YOUR-DOMAIN-HERE with your live domain, e.g. societalaituva.org -->
+<!-- UPDATE: replace saiuva.com with your live domain, e.g. societalaituva.org -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/</loc>
+    <loc>https://saiuva.com/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/pages/about.html</loc>
+    <loc>https://saiuva.com/pages/about.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/pages/fellowship.html</loc>
+    <loc>https://saiuva.com/pages/fellowship.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/pages/calendar.html</loc>
+    <loc>https://saiuva.com/pages/calendar.html</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/pages/contact.html</loc>
+    <loc>https://saiuva.com/pages/contact.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/pages/advocacy.html</loc>
+    <loc>https://saiuva.com/pages/advocacy.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/pages/publications.html</loc>
+    <loc>https://saiuva.com/pages/publications.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN-HERE/pages/legacy.html</loc>
+    <loc>https://saiuva.com/pages/legacy.html</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>

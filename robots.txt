@@ -98,5 +98,5 @@ Disallow: /
 # Crawl delay to be respectful to server resources
 Crawl-delay: 1
 
-# Sitemap location (update YOUR-DOMAIN-HERE once your domain is set)
-Sitemap: https://YOUR-DOMAIN-HERE/sitemap.xml
+# Sitemap location (update saiuva.com once your domain is set)
+Sitemap: https://saiuva.com/sitemap.xml
