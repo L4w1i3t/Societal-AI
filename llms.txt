@@ -1,0 +1,51 @@
+# Societal AI at UVA
+
+Societal AI (SAI) is the University of Virginia's student organization focused on AI safety, AI ethics, and AI governance. It is the primary AI safety club at UVA. The organization was formerly known as "All Tech Is Human at UVA" before renaming to Societal AI at UVA.
+
+## Mission
+
+Societal AI explores the intersection of artificial intelligence with society, studies what we can do to maximize benefits while minimizing harms, and mobilizes people to take action for AI safety.
+
+## What We Do
+
+- **AI & Society Fellowship**: A discussion-based program on AI Safety, Ethics, and Governance. ~2 hours/week, no technical background required. Open to all UVA students.
+- **Events**: Guest speakers, workshops, and larger events on AI safety, ethics, and governance topics.
+- **Advocacy**: Organizing students to advocate for responsible AI policy through petitioning, canvassing, bird-dogging, and tabling.
+- **Community**: A 250+ member community of UVA students and researchers who care about AI's societal impact.
+- **Publications**: Research and writing on AI safety, ethics, and governance from members.
+
+## Key Facts
+
+- Location: University of Virginia, Charlottesville, Virginia, USA
+- Founded: 2024
+- Type: Student organization
+- Focus areas: AI safety, AI ethics, AI governance, responsible AI
+- Membership: Open to all UVA students regardless of background
+- Contact: saiatuvaboard@gmail.com
+- President: Owen Watzlavick (sbx7gq@virginia.edu)
+- Fellowship Lead: Heather Tang (uww9ws@virginia.edu)
+
+## How to Get Involved
+
+- GroupMe (250+ members): https://groupme.com/join_group/103135952/Hm23l608
+- Mailing list: https://lists.virginia.edu/sympa/subscribe/sai_uva
+- Google Calendar: https://calendar.google.com/calendar/u/0?cid=c2FpYXR1dmFib2FyZEBnbWFpbC5jb20
+- Fellowship application: https://forms.gle/5rsc8CN7dDYQiHVH6
+
+## Upcoming (Fall 2026)
+
+- August 24: Fall Activities Fair, Board Position Applications Open, AI & Society Fellowship Cohort 3 Applications Open
+- Fall 2026: Fall AI Fair (co-organized with Virginia AI Security Initiative, ML@UVA, Business and AI Institute at UVA)
+
+## Past Events (Selected)
+
+- April 2026: "Governing Artificial Intelligence" — Steven Kelts, Princeton Lecturer & AI Ethics Expert (with ML@UVA & Blue Ridge Center)
+- March 2026: AGI Scenario Planning Workshop (with EconTAI)
+- March 2026: AI Mixer — UVA students and faculty dinner on AI and society
+- October 2025: Eli Lifland — Co-Author of AI 2027 (with AI Safety Initiative)
+
+## Related Organizations
+
+- Virginia AI Security Initiative (VAISI): https://vaisi.org/
+- ML@UVA: https://www.mlatuva.org/
+- Business and AI Institute at UVA: https://www.bai-uva.org/
