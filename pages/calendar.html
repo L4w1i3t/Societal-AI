@@ -20,7 +20,7 @@
 
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google.com; connect-src 'self' https://www.googleapis.com; frame-src https://calendar.google.com; base-uri 'self'; form-action 'self';"
     />
 
     <link rel="icon" type="image/x-icon" href="../assets/gui/favicon.ico" />
@@ -46,8 +46,27 @@
         </div>
       </section>
 
-      <!-- Upcoming Events -->
-      <section class="events-upcoming-section">
+      <!-- Live Google Calendar -->
+      <section class="gcal-section">
+        <div class="container">
+          <div class="about-section-header">
+            <h2>Upcoming Events</h2>
+            <a href="https://calendar.google.com/calendar/u/0?cid=c2FpYXR1dmFib2FyZEBnbWFpbC5jb20" target="_blank" rel="noopener noreferrer" class="btn btn-primary-modern">+ Subscribe to Our Google Calendar</a>
+          </div>
+          <div class="gcal-wrapper">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=saiatuvaboard%40gmail.com&ctz=America%2FNew_York&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
+              class="gcal-iframe"
+              frameborder="0"
+              scrolling="no"
+              title="Societal AI at UVA — Google Calendar"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Events (removed — replaced by Google Calendar embed above) -->
+      <section class="events-upcoming-section" hidden>
         <div class="container">
           <div class="about-section-header">
             <h2>Upcoming Events</h2>

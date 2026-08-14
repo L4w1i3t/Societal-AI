@@ -1169,6 +1169,8 @@ body.modal-open { overflow: hidden; }
 .about-section-header h2::after { display: none; }
 .team-section-title { color: var(--orange) !important; }
 .about-section-header p { color: var(--text-on-dark-muted); font-size: 0.9rem; margin: 0; }
+.gcal-section .about-section-header,
+.events-highlighted-section .about-section-header { margin-bottom: 0.75rem; padding-bottom: 0.5rem; }
 
 /* ── Alumni Section ── */
 .alumni-section {
@@ -1687,6 +1689,22 @@ body.modal-open { overflow: hidden; }
   line-height: 1.6;
 }
 .contact-simple-group p:last-child { margin-bottom: 0; }
+
+/* ── Google Calendar Embed ── */
+.gcal-section {
+  background: var(--blue);
+  padding: 2rem 0;
+}
+.gcal-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.gcal-iframe {
+  width: 100%;
+  height: 700px;
+  display: block;
+}
 
 /* ── Events Upcoming Section ── */
 .events-upcoming-section {

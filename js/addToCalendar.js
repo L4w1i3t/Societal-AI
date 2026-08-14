@@ -42,33 +42,35 @@
   }
 
   function init() {
-    // ICS download links
-    document.querySelectorAll('.atc-ics').forEach(function (el) {
-      el.addEventListener('click', function (e) {
+    // Event delegation handles both static and dynamically rendered events
+    document.addEventListener('click', function (e) {
+      var icsLink = e.target.closest('.atc-ics');
+      if (icsLink) {
         e.preventDefault();
-        var d = this.dataset;
+        e.stopPropagation();
+        var d = icsLink.dataset;
         var ics = buildICS(d.title, d.start, d.end, d.desc || '', d.loc || 'TBA');
         var filename = (d.title || 'event').replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.ics';
         downloadICS(filename, ics);
         closeAll();
-      });
-    });
+        return;
+      }
 
-    // Toggle dropdowns
-    document.querySelectorAll('.add-to-cal-btn').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
+      var btn = e.target.closest('.add-to-cal-btn');
+      if (btn) {
         e.stopPropagation();
-        var dropdown = this.closest('.add-to-cal').querySelector('.add-to-cal-dropdown');
-        var isOpen = this.getAttribute('aria-expanded') === 'true';
+        var dropdown = btn.closest('.add-to-cal').querySelector('.add-to-cal-dropdown');
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
         closeAll();
         if (!isOpen) {
-          this.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-expanded', 'true');
           dropdown.hidden = false;
         }
-      });
-    });
+        return;
+      }
 
-    document.addEventListener('click', closeAll);
+      closeAll();
+    });
   }
 
   if (document.readyState === 'loading') {
