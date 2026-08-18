@@ -147,6 +147,27 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         link.classList.add("active");
       }
+      // Advocacy page
+      else if (
+        currentPath.includes("advocacy.html") &&
+        href.includes("advocacy.html")
+      ) {
+        link.classList.add("active");
+      }
+      // Publications page
+      else if (
+        currentPath.includes("publications.html") &&
+        href.includes("publications.html")
+      ) {
+        link.classList.add("active");
+      }
+      // Resources page
+      else if (
+        currentPath.includes("resources.html") &&
+        href.includes("resources.html")
+      ) {
+        link.classList.add("active");
+      }
     });
   }
 
