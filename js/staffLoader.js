@@ -47,7 +47,7 @@ class StaffLoader {
   createStaffCard(member) {
     if (member.placeholder) {
       return `
-        <div class="staff-card staff-card--placeholder" aria-label="${member.title} — position open">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdF7B45zHPtt43bdeVpeAjj19RA3MOvknJUUoMAWhhH14K5jQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="staff-card staff-card--placeholder" aria-label="${member.title} — position open, apply here">
           <div class="staff-photo staff-photo--empty">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10"/>
@@ -59,7 +59,7 @@ class StaffLoader {
             <h3>Applications Open</h3>
             <h4>${member.title}</h4>
           </div>
-        </div>
+        </a>
       `;
     }
 
