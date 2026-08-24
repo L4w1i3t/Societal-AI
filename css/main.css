@@ -749,6 +749,13 @@ body.mobile-menu-open { overflow: hidden; }
   object-position: center top;
   transition: transform 0.3s ease;
 }
+/* Daisy & Rebekah's source photos are framed lower in the shot; top-anchored cropping cuts off their chins */
+.staff-card .staff-photo img[src*="daisy.png"],
+.staff-card .staff-photo img[src*="rebekahheadshot"],
+.modal-photo[src*="daisy.png"],
+.modal-photo[src*="rebekahheadshot"] {
+  object-position: center 45%;
+}
 .staff-card:hover .staff-photo img { transform: scale(1.04); }
 .staff-card .staff-photo::after { display: none; }
 .staff-card:hover .staff-photo::after { display: none; }
