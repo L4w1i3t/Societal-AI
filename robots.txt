@@ -15,7 +15,6 @@ Allow: /pages/join.html
 Allow: /pages/legacy.html
 Allow: /pages/fellowship.html
 Allow: /pages/advocacy.html
-Allow: /pages/publications.html
 
 # ALLOW - Static assets needed for proper rendering
 Allow: /css/

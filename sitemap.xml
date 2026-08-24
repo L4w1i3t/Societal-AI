@@ -32,11 +32,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://saiuva.com/pages/publications.html</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://saiuva.com/pages/resources.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
