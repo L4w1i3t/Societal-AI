@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="modal-degree"></p>
                     </div>
                 </div>
-                <div class="modal-bio"></div>
             </div>
         </div>
     `;

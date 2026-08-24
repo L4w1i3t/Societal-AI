@@ -75,7 +75,6 @@ class StaffLoader {
           <h3>${member.name}</h3>
           <h4>${member.title}</h4>
           <p class="major hidden-degree">${member.degree || ''}</p>
-          <p class="bio hidden">${member.bio || ''}</p>
           ${socialLinks}
         </div>
       </div>
@@ -136,7 +135,6 @@ class StaffLoader {
     const modalName = modal.querySelector('.modal-name');
     const modalPosition = modal.querySelector('.modal-position');
     const modalDegree = modal.querySelector('.modal-degree');
-    const modalBio = modal.querySelector('.modal-bio');
 
     staffCards.forEach((card) => {
       const newCard = card.cloneNode(true);
@@ -149,13 +147,11 @@ class StaffLoader {
         const positionEl = newCard.querySelector('h4');
         const degreeEl = newCard.querySelector('.hidden-degree');
         const imgEl = newCard.querySelector('img');
-        const bioEl = newCard.querySelector('.bio');
 
         const name = nameEl ? nameEl.textContent.trim() : 'Unknown';
         const position = positionEl ? positionEl.textContent.trim() : '';
         const degree = degreeEl ? degreeEl.textContent.trim() : '';
         const photo = imgEl ? imgEl.src : '';
-        const bio = bioEl ? bioEl.textContent.trim() : 'Biography coming soon.';
 
         const sanitizedPhoto = window.SecurityUtils
           ? window.SecurityUtils.sanitizeUrl(photo)
@@ -167,14 +163,12 @@ class StaffLoader {
           window.SecurityUtils.safeSetTextContent(modalName, name);
           window.SecurityUtils.safeSetTextContent(modalPosition, position);
           window.SecurityUtils.safeSetTextContent(modalDegree, degree ? `Degree: ${degree}` : '');
-          window.SecurityUtils.safeSetTextContent(modalBio, bio || 'Biography coming soon.');
         } else {
           modalPhoto.src = sanitizedPhoto;
           modalPhoto.alt = name;
           modalName.textContent = name;
           modalPosition.textContent = position;
           modalDegree.textContent = degree ? `Degree: ${degree}` : '';
-          modalBio.textContent = bio || 'Biography coming soon.';
         }
 
         modal.classList.add('active');

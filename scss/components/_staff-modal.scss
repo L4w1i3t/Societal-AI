@@ -97,7 +97,7 @@
 .modal-header {
   display: flex;
   gap: 2rem;
-  padding: 2rem 2rem 1rem;
+  padding: 2rem;
 
   @media (max-width: $breakpoint-md) {
     flex-direction: column;
@@ -161,23 +161,6 @@
   }
 }
 
-.modal-bio {
-  padding: 2rem;
-  border-top: 1px solid rgba($border-color, 0.3);
-  margin-top: 1.5rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
-
-  &::before {
-    content: "About";
-    display: block;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: $text-color;
-    font-size: 1.2rem;
-  }
-}
-
 body.modal-open {
   overflow: hidden;
 }
@@ -186,10 +169,6 @@ body.modal-open {
 .staff-card {
   cursor: pointer;
   position: relative;
-
-  .bio.hidden {
-    display: none;
-  }
 
   // Add a subtle "Click for more" indicator
   &::after {

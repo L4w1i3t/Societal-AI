@@ -199,51 +199,12 @@
       font-weight: 500;
       line-height: 1.4;
     }
-
-    .bio {
-      font-size: 0.875rem;
-      color: $text-muted;
-      line-height: 1.6;
-      position: relative;
-      padding-left: 0;
-      transition: padding-left $transition-base;
-
-      &.hidden {
-        display: none;
-      }
-
-      // Animated left border for bio text
-      &:not(:empty):not(.hidden)::before {
-        content: "";
-        position: absolute;
-        top: 0.5em;
-        left: -10px;
-        width: 3px;
-        height: 0;
-        background: $gradient-primary;
-        border-radius: 1.5px;
-        transition:
-          height $transition-slow,
-          left $transition-base;
-        opacity: 0;
-      }
-    }
   }
 
   // Hover effects for staff info
   &:hover .staff-info {
     h4::after {
       width: 60px;
-    }
-
-    .bio:not(:empty):not(.hidden)::before {
-      height: calc(100% - 1em);
-      left: 0;
-      opacity: 1;
-    }
-
-    .bio:not(:empty):not(.hidden) {
-      padding-left: 12px;
     }
   }
 }
@@ -263,14 +224,6 @@
       h4::after {
         left: 50%;
         transform: translateX(-50%);
-      }
-
-      .bio:not(:empty):not(.hidden)::before {
-        display: none;
-      }
-
-      .bio:not(:empty):not(.hidden) {
-        padding-left: 0;
       }
     }
   }
